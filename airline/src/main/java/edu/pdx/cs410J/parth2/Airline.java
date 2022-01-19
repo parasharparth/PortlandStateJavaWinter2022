@@ -4,7 +4,7 @@ import edu.pdx.cs410J.AbstractAirline;
 
 import java.util.Collection;
 import edu.pdx.cs410J.AbstractFlight;
-
+import edu.pdx.cs410J.AbstractFlight;
 import java.util.Collection;
 import java.util.ArrayList;
 import java.util.Collections;

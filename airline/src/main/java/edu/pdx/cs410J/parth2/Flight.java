@@ -37,7 +37,7 @@ public class Flight extends AbstractFlight {
     throw new UnsupportedOperationException("This method is not implemented yet");
   }
 
-  SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy hh:mm a");
+  SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy hh:mm");
   Map names = AirportNames.getNamesMap();
   int flightnum;
   String src, dst;
@@ -80,10 +80,9 @@ public class Flight extends AbstractFlight {
    * This method sets the departure date and time of a flight from the source
    * @param date The date when the flight departs
    * @param time The date when the flight arrives
-   * @param ampm The time of the day (am or pm)
    */
-  public void setDepart(String date, String time, String ampm) {
-    String finaldatetime = date + " " + time + " " + ampm;
+  public void setDepart(String date, String time) {
+    String finaldatetime = date + " " + time ;
     try{
       this.dprt = formatter.parse(finaldatetime);
     }
@@ -119,10 +118,9 @@ public class Flight extends AbstractFlight {
    * This method sets the arrival date and time of a flight at the destination
    * @param date The date when the flight arrives
    * @param time The time when the flight arrives
-   * @param ampm The time of the day (am or pm)
    */
-  public void setArrive(String date, String time, String ampm) {
-    String finaldatetime = date + " " + time + " " + ampm;
+  public void setArrive(String date, String time) {
+    String finaldatetime = date + " " + time;
     try{
       this.arrv = formatter.parse(finaldatetime);
     }
