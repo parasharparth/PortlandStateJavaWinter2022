@@ -181,9 +181,10 @@ public class Project1 {
     System.exit(0);
   }
 
-    for (String arg : args) {
-      System.out.println(arg);
-    }
-    System.exit(1);
-  }
+//    for (String arg : args) {
+//      System.out.println(arg);
+//    }
+//    System.exit(1);
+//  }
 
+}
