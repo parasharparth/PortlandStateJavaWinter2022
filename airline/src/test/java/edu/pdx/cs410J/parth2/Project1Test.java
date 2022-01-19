@@ -15,7 +15,14 @@ import static org.hamcrest.MatcherAssert.assertThat;
  * from <code>Project1IT</code> which is an integration test (and can handle the calls
  * to {@link System#exit(int)} and the like.
  */
-class Project1Test {
+class Project1Test extends InvokeMainTestCase {
+
+  /**
+   * Invokes the main method of {@link Project1} with the given arguments.
+   */
+  private MainMethodResult invokeMain(String... args) {
+    return invokeMain( Project1.class, args );
+  }
 
   @Test
   void readmeCanBeReadAsResource() throws IOException {
@@ -27,5 +34,49 @@ class Project1Test {
       String line = reader.readLine();
       assertThat(line, containsString("This is a README file!"));
     }
+  }
+
+  /**
+   * Tests that invoking the main method with no arguments issues an error
+   */
+  @Test
+  public void testreadme() {
+    MainMethodResult result = invokeMain(new String[] {"-README"});
+    assertThat(result.getExitCode(), equalTo(0));
+    assertThat(result.getTextWrittenToStandardOut(), containsString("Name: Pratik Kadam"));
+  }
+
+  @Test
+  public void testprint() {
+    MainMethodResult result = invokeMain(new String[] {"-print", "emirates", "123", "pdx", "03/03/2017", "12:00", "dbo", "09/09/2017", "16:00"});
+    assertThat(result.getExitCode(), equalTo(0));
+    assertThat(result.getTextWrittenToStandardOut(), containsString("Flight 123 departs pdx at 03/03/2017 12:00 arrives dbo at 09/09/2017 16:00"));
+  }
+
+  @Test
+  public void testNoCommandLineArguments(){
+    MainMethodResult result = invokeMain();
+    assertThat(result.getExitCode(), equalTo(1));
+    assertThat(result.getTextWrittenToStandardError(), containsString("No arguments!"));
+  }
+
+  @Test
+  public void missingCommandLineArguments(){
+    MainMethodResult result = invokeMain(new String[] {"-print", "emirates", "123", "pdx"});
+    assertThat(result.getExitCode(), equalTo(1));
+    assertThat(result.getTextWrittenToStandardError(), containsString("Missing command line arguments"));
+  }
+
+  @Test
+  public void toomanyCommandLineArguments(){
+    MainMethodResult result = invokeMain(new String[] {"-print", "emirates", "123", "pdx", "03/03/2017", "12:00", "dubai", "09/09/2017", "16:00", "dubai"});
+    assertThat(result.getExitCode(), equalTo(1));
+    assertThat(result.getTextWrittenToStandardError(), containsString("Please check the arguments"));
+  }
+
+  @Test
+  public void testnewairline(){
+    MainMethodResult result = invokeMain(new String[] {"-textFile", "pratik.txt", "emirates", "123", "pdx", "03/03/2017", "12:00", "dbo", "09/09/2017", "16:00"});
+    assertThat(result.getExitCode(), equalTo(0));
   }
 }
