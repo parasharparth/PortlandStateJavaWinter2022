@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Airline extends AbstractAirline<Flight> {
+  ArrayList<Flight> arrli = new ArrayList<Flight>();
   private final String name;
 
   public Airline(String name) {
@@ -28,36 +29,18 @@ public class Airline extends AbstractAirline<Flight> {
 
   @Override
   public Collection<Flight> getFlights() {
+    arrli.add((Flight)abstractFlight);
     throw new UnsupportedOperationException("This method is not implemented yet");
+
   }
 
-  ArrayList<Flight> arrli = new ArrayList<Flight>();
-  String air_name;
 
   /**
    * This method is used to set the name of the airline
    * @param aname the name of the airline
    */
-  public void setName(String aname) {
-    this.air_name = aname;
-  }
-
-  /**
-   * This method is used to retrieve the name of the airline
-   * @return This returns the name of the airline
-   */
-  @Override
-  public String getName() {
-    return this.air_name;
-  }
-
-  /**
-   * This method is used to add the Flight to the Airline
-   * @param abstractFlight The object of the class AbstractFlight
-   */
-  @Override
-  public void addFlight(AbstractFlight abstractFlight) {
-    arrli.add((Flight)abstractFlight);
+  public void setName(String name) {
+    this.name = name;
   }
 
   /**
