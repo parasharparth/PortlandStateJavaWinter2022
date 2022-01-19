@@ -77,23 +77,6 @@ public class Project1 {
             System.exit(1);
           }
         }
-        int k;
-        String first, second;
-        first = args[0];
-        second = args[1];
-        for(k = 0; k < args.length-2; k++){
-          args[k] = args[k+2];
-        }
-        args[k] = first;
-        args[k+1] = second;
-        Object[] objs = compute(args);
-        TextParser parser = new TextParser();
-        TextDumper dumper = new TextDumper();
-        dumper.setFilename(args[9]);
-        parser.setnames(args[9], args[0]);
-        AbstractAirline parsedairline = parser.parse();
-        parsedairline.addFlight((AbstractFlight) objs[1]);
-        dumper.dump(parsedairline);
         System.exit(0);
       }
       else {
@@ -116,21 +99,6 @@ public class Project1 {
         args[k] = first;
         args[k+1] = second;
         args[k+2] = third;
-        Object[] objs = compute(args);
-        TextParser parser = new TextParser();
-        TextDumper dumper = new TextDumper();
-        if(args[8].equals("-textFile")){
-          dumper.setFilename(args[9]);
-          parser.setnames(args[9], args[0]);
-        }
-        else {
-          dumper.setFilename(args[10]);
-          parser.setnames(args[10], args[0]);
-        }
-        AbstractAirline parsedairline = parser.parse();
-        parsedairline.addFlight((AbstractFlight) objs[1]);
-        dumper.dump(parsedairline);
-        System.out.println(objs[1].toString());
         System.exit(0);
       }
       else {
