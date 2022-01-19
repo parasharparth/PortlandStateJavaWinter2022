@@ -42,16 +42,4 @@ public class Airline extends AbstractAirline<Flight> {
   public void setName(String name) {
     this.name = name;
   }
-
-  /**
-   * This method is used to retrieve the flights added to the airline
-   * @return This returns a list of flights that have been added to the airline
-   */
-  @Override
-  public ArrayList<Flight> getFlights() {
-    Collections.sort(arrli);
-    return arrli;
-  }
-
-  //commit check
 }
