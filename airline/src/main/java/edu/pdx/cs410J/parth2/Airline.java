@@ -42,7 +42,7 @@ public class Airline extends AbstractAirline<Flight> {
    * This method is used to set the name of the airline
    * @param name the name of the airline
    */
-  public void setName(String name) {
-    this.name = name;
+  public void setName(String aname) {
+    this.name = aname;
   }
 }
