@@ -69,10 +69,6 @@ public class Flight extends AbstractFlight {
    */
   public void setSrc(String source) {
     String sourceuppercase = source.toUpperCase();
-    if(!names.containsKey(sourceuppercase)){
-      System.err.println("The three-letter code for the source is invalid");
-      System.exit(1);
-    }
     this.src = source;
   }
 
@@ -98,10 +94,6 @@ public class Flight extends AbstractFlight {
    */
   public void setDest(String dest) {
     String destuppercase = dest.toUpperCase();
-    if(!names.containsKey(destuppercase)){
-      System.err.println("The three-letter code for the source is invalid");
-      System.exit(1);
-    }
     String codex = "[a-zA-Z]{3}";
     Pattern pattern = Pattern.compile(codex);
     Matcher matcher = pattern.matcher(dest);
