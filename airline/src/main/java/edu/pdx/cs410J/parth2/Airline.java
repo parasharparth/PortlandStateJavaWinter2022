@@ -11,7 +11,7 @@ import java.util.Collections;
 
 public class Airline extends AbstractAirline<Flight> {
   ArrayList<Flight> arrli = new ArrayList<Flight>();
-  private final String name;
+  private String name;
 
 
   public Airline() {
