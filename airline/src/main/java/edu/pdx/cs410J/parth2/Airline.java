@@ -13,6 +13,7 @@ public class Airline extends AbstractAirline<Flight> {
   ArrayList<Flight> arrli = new ArrayList<Flight>();
   private final String name;
 
+
   public Airline() {
   }
   public Airline(String name) {
@@ -26,12 +27,12 @@ public class Airline extends AbstractAirline<Flight> {
 
   @Override
   public void addFlight(Flight flight) {
+    arrli.add(flight);
     throw new UnsupportedOperationException("This method is not implemented yet");
   }
 
   @Override
   public Collection<Flight> getFlights() {
-    arrli.add((Flight)abstractFlight);
     throw new UnsupportedOperationException("This method is not implemented yet");
 
   }
@@ -39,7 +40,7 @@ public class Airline extends AbstractAirline<Flight> {
 
   /**
    * This method is used to set the name of the airline
-   * @param aname the name of the airline
+   * @param name the name of the airline
    */
   public void setName(String name) {
     this.name = name;

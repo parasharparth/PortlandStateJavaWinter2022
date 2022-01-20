@@ -38,7 +38,7 @@ public class Flight extends AbstractFlight {
   }
 
   SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy hh:mm");
-  Map names = AirportNames.getNamesMap();
+
   int flightnum;
   String src, dst;
   Date dprt, arrv;
