@@ -43,6 +43,6 @@ public class Airline extends AbstractAirline<Flight> {
    * @param name the name of the airline
    */
   public void setName(String aname) {
-    this.name = aname;
+    name = aname;
   }
 }
