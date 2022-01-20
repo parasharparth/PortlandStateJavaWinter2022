@@ -43,14 +43,14 @@ class Project1Test extends InvokeMainTestCase {
   public void testreadme() {
     MainMethodResult result = invokeMain(new String[] {"-README"});
     assertThat(result.getExitCode(), equalTo(0));
-    assertThat(result.getTextWrittenToStandardOut(), containsString("Name: Pratik Kadam"));
+    assertThat(result.getTextWrittenToStandardOut(), containsString("Name: Parth Parashar"));
   }
 
   @Test
   public void testprint() {
-    MainMethodResult result = invokeMain(new String[] {"-print", "emirates", "123", "pdx", "03/03/2017", "12:00", "dbo", "09/09/2017", "16:00"});
+    MainMethodResult result = invokeMain(new String[] {"-print", "emirates", "123", "pdx", "03/03/2022", "12:00", "dbo", "09/09/2022", "16:00"});
     assertThat(result.getExitCode(), equalTo(0));
-    assertThat(result.getTextWrittenToStandardOut(), containsString("Flight 123 departs pdx at 03/03/2017 12:00 arrives dbo at 09/09/2017 16:00"));
+    assertThat(result.getTextWrittenToStandardOut(), containsString("Flight 123 departs pdx at 03/03/2022 12:00 arrives dbo at 09/09/2022 16:00"));
   }
 
   @Test
@@ -69,14 +69,14 @@ class Project1Test extends InvokeMainTestCase {
 
   @Test
   public void toomanyCommandLineArguments(){
-    MainMethodResult result = invokeMain(new String[] {"-print", "emirates", "123", "pdx", "03/03/2017", "12:00", "dubai", "09/09/2017", "16:00", "dubai"});
+    MainMethodResult result = invokeMain(new String[] {"-print", "emirates", "123", "pdx", "03/03/2022", "12:00", "dubai", "09/09/2022", "16:00", "dubai"});
     assertThat(result.getExitCode(), equalTo(1));
     assertThat(result.getTextWrittenToStandardError(), containsString("Please check the arguments"));
   }
 
   @Test
   public void testnewairline(){
-    MainMethodResult result = invokeMain(new String[] {"-textFile", "pratik.txt", "emirates", "123", "pdx", "03/03/2017", "12:00", "dbo", "09/09/2017", "16:00"});
+    MainMethodResult result = invokeMain(new String[] {"-textFile", "parth.txt", "emirates", "123", "pdx", "03/03/2022", "12:00", "dbo", "09/09/2022", "16:00"});
     assertThat(result.getExitCode(), equalTo(0));
   }
 }
