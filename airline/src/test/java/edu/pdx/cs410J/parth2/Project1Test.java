@@ -48,12 +48,12 @@ class Project1Test extends InvokeMainTestCase {
     assertThat(result.getTextWrittenToStandardOut(), containsString("Please enter the arguments in the format given below"));
   }
 
-//  @Test
-//  public void testprint() {
-//    MainMethodResult result = invokeMain(new String[] {"-print", "emirates", "123", "pdx", "03/03/2017", "12:00", "dbo", "09/09/2017", "16:00"});
-//    assertThat(result.getExitCode(), equalTo(0));
-//    assertThat(result.getTextWrittenToStandardOut(), containsString("Flight 123 departs pdx at 03/03/2017 12:00 arrives dbo at 09/09/2017 16:00"));
-//  }
+  @Test
+  public void testprint() {
+    MainMethodResult result = invokeMain(new String[] {"-print", "emirates", "123", "pdx", "03/03/2017", "12:00", "dbo", "09/09/2017", "16:00"});
+    assertThat(result.getExitCode(), equalTo(0));
+    assertThat(result.getTextWrittenToStandardOut(), containsString("Printing the contents of the Flight added to the airline as -print option is mentioned in arguments"));
+  }
 
   @Test
   public void testNoCommandLineArguments(){
