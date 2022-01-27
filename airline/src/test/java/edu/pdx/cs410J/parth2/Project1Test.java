@@ -139,7 +139,7 @@ class Project1Test extends InvokeMainTestCase {
   @Test
   public void testinvalidtimeinfile(){
     File file = new File("src/test/resources/edu/pdx/cs410J/parth2/invalidtime.txt");
-    MainMethodResult result = invokeMain(new String[] {"-textFile", "src/test/resources/edu/pdx/cs410J/pkadam/invalidtime.txt", "emirates", "123", "pdx", "03/03/2017", "12:00", "dbo", "09/09/2017", "16:00"});
+    MainMethodResult result = invokeMain(new String[] {"-textFile", "src/test/resources/edu/pdx/cs410J/parth2/invalidtime.txt", "emirates", "123", "pdx", "03/03/2017", "12:00", "dbo", "09/09/2017", "16:00"});
     assertThat(result.getExitCode(), equalTo(1));
     assertThat(result.getTextWrittenToStandardError(), containsString("There is some issue with the file or file writer"));
   }
@@ -147,7 +147,7 @@ class Project1Test extends InvokeMainTestCase {
   @Test
   public void testinvalidformatinfile(){
     File file = new File("src/test/resources/edu/pdx/cs410J/parth2/invalidformat.txt");
-    MainMethodResult result = invokeMain(new String[] {"-textFile", "src/test/resources/edu/pdx/cs410J/pkadam/invalidformat.txt", "emirates", "123", "pdx", "03/03/2017", "12:00", "dbo", "09/09/2017", "16:00"});
+    MainMethodResult result = invokeMain(new String[] {"-textFile", "src/test/resources/edu/pdx/cs410J/parth2/invalidformat.txt", "emirates", "123", "pdx", "03/03/2017", "12:00", "dbo", "09/09/2017", "16:00"});
     assertThat(result.getExitCode(), equalTo(1));
     assertThat(result.getTextWrittenToStandardError(), containsString("There is some issue with the file or file writer"));
   }
