@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 
 public class Project2Test extends InvokeMainTestCase {
 
-
     private MainMethodResult invokeMain(String... args) {
         return invokeMain( Project2.class, args );
     }
