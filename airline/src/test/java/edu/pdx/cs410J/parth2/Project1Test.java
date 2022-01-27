@@ -12,21 +12,11 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.util.Scanner;
 
-/**
- * A unit test for code in the <code>Project1</code> class.  This is different
- * from <code>Project1IT</code> which is an integration test (and can handle the calls
- * to {@link System#exit(int)} and the like.
- */
+
 class Project1Test extends InvokeMainTestCase {
 
-  /**
-   * Invokes the main method of {@link Project1} with the given arguments.
-   */
+
   private MainMethodResult invokeMain(String... args) {
     return invokeMain( Project2.class, args );
   }
@@ -43,12 +33,7 @@ class Project1Test extends InvokeMainTestCase {
     }
   }
 
-  /**
-   * Tests that invoking the main method with no arguments issues an error
-   */
-  /**
-   * Tests that invoking the main method with no arguments issues an error
-   */
+
   @Test
   public void testnoarguments(){
     MainMethodResult result = invokeMain();
@@ -121,15 +106,15 @@ class Project1Test extends InvokeMainTestCase {
 
   @Test
   public void testnewairline(){
-    File file = new File("pratik.txt");
-    MainMethodResult result = invokeMain(new String[] {"-textFile", "pratik.txt", "emirates", "123", "pdx", "03/03/2017", "12:00", "dbo", "09/09/2017", "16:00"});
+    File file = new File("parth.txt");
+    MainMethodResult result = invokeMain(new String[] {"-textFile", "parth.txt", "emirates", "123", "pdx", "03/03/2017", "12:00", "dbo", "09/09/2017", "16:00"});
     assertThat(result.getExitCode(), equalTo(1));
     assertTrue(file.exists());
   }
 
   @Test
   public void testnewairlinewithprint(){
-    File file = new File("pratik.txt");
+    File file = new File("parth.txt");
     MainMethodResult result = invokeMain(new String[] {"-textFile", "parth.txt", "-print", "emirates", "123", "pdx", "03/03/2017", "12:00", "dbo", "09/09/2017", "16:00"});
     assertThat(result.getExitCode(), equalTo(0));
     assertThat(result.getTextWrittenToStandardOut(), containsString("Printing the contents of the Flight added to the airline as -print option is mentioned in arguments"));
