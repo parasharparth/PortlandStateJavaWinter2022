@@ -197,6 +197,11 @@ public class Project2 {
             printInfo(args,4);
         }
 
+        if(args.length > 12)
+        {
+            System.err.println("Please check the arguments");
+            System.exit(1);
+        }
     }
 
 
