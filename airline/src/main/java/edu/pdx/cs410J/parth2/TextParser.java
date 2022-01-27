@@ -1,7 +1,10 @@
 package edu.pdx.cs410J.parth2;
 
+import edu.pdx.cs410J.AbstractAirline;
 import edu.pdx.cs410J.AirlineParser;
+import edu.pdx.cs410J.AirportNames;
 import edu.pdx.cs410J.ParserException;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -11,24 +14,28 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class TextParser implements AirlineParser<Airline> {
-
-  public TextParser() {
-
-  }
-
-  //Now we have to get the filename and airline name from the
+/**
+ * This is the class that implements the AirlineParser interface
+ */
+public class TextParser implements AirlineParser {
   String filename, airlinename;
 
+  /**
+   * This method sets the class variables to be used in the parse() method
+   * @param fname the name of the text file to parse
+   * @param aname the name of the airline passed in the command line
+   */
   public void setnames(String fname, String aname) {
     this.filename = fname;
     this.airlinename = aname;
   }
 
-
-
+  /**
+   * This method parses the text file and creates the airline with its associated flights
+   * @return the Airline object created from the details in the text file
+   */
   @Override
-  public Airline parse() throws ParserException {
+  public AbstractAirline parse() throws ParserException {
     Scanner sc = null;
     try {
       sc = new Scanner(new File(this.filename));
@@ -95,39 +102,46 @@ public class TextParser implements AirlineParser<Airline> {
       System.err.println("The textfile is empty!");
       System.exit(1);
     }
+    airline.setName(lines.get(0));
+    //This for loop checks each and every detail of every flight in the text file
+    for(int i = 1; i < lines.size(); i++) {
+      String[] words = lines.get(i).split(" ");
+      if(words.length != 14) {
+        System.err.println("The text file is not formatted properly.");
+        System.exit(1);
+      }
+      checkFlightnum(words[1]);
+      checkairportcode(words[3]);
+      checkairportcode(words[9]);
+      checkdatetime(words[5], words[6], words[7]);
+      checkdatetime(words[11], words[12], words[13]);
+      Flight flight = new Flight();
+      flight.setFlightnum(words[1]);
+      flight.setSrc(words[3]);
+      flight.setDepart(words[5], words[6], words[7]);
+      flight.setDest(words[9]);
+      flight.setArrive(words[11], words[12], words[13]);
+      if(flight.checkdeparturebeforearrival()){
+        airline.addFlight(flight);
+      }
+      else{
+        System.err.println("The flight's arrival time is before its departure time in the text file");
+        System.exit(1);
+      }
+    }
+
     //Checks if the airline name in the file is similar to that in the command line or not
     if(!this.airlinename.equals(lines.get(0))){
       System.err.println("The airline name is different than in the file");
       System.exit(1);
     }
-
-    airline.setName(lines.get(0));
-
-    //This for loop checks each and every detail of every flight in the text file
-    for(int i = 1; i < lines.size(); i++) {
-      String[] words = lines.get(i).split(" ");
-      if(words.length != 12) {
-        System.err.println("The text file is not formatted properly.");
-        System.exit(1);
-      }
-      checkFlightnum(words[1]);
-      System.out.println("departure time is:- "+words[5]+words[6]);
-      System.out.println("arrival  time is:- "+words[10]+words[11]);
-      checkdatetime(words[5], words[6]);
-      checkdatetime(words[10], words[11]);
-      Flight flight = new Flight();
-      flight.setFlightnum(words[1]);
-      flight.setSrc(words[3]);
-      flight.setDepart(words[5], words[6]);
-      flight.setDest(words[9]);
-      flight.setArrive(words[10], words[11]);
-    }
-
-
     return airline;
+  }
 
-    }
-
+  /**
+   * This method checks whether the flightnumbers in the text file are correct or not
+   * @param number the flightnumber of a flight
+   */
   public static void checkFlightnum(String number) {
     int num = 0;
     try {
@@ -149,11 +163,29 @@ public class TextParser implements AirlineParser<Airline> {
     }
   }
 
+  /**
+   * This method checks whether the airport codes in the text file are correct or not
+   * @param source the airport code of a source or a destination
+   */
+  public static void checkairportcode(String source) {
+    String sourceuppercase = source.toUpperCase();
+    Map names = AirportNames.getNamesMap();
+    if(!names.containsKey(sourceuppercase)){
+      System.err.println("The three-letter airport code is invalid in the text file");
+      System.exit(1);
+    }
+    return;
+  }
 
-
-  public static void checkdatetime(String date, String time) {
-    SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy hh:mm");
-    String finaldatetime = date + " " + time ;
+  /**
+   * This method checks whether the dates and times in the text file are correct or not
+   * @param date the departure or arrival date of a flight
+   * @param time the departure or arrival time of a flight
+   * @param ampm The time of the day (am or pm)
+   */
+  public static void checkdatetime(String date, String time, String ampm) {
+    SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy hh:mm a");
+    String finaldatetime = date + " " + time + " " + ampm;
     try{
       Date d = formatter.parse(finaldatetime);
     }
@@ -163,4 +195,3 @@ public class TextParser implements AirlineParser<Airline> {
     }
   }
 }
-

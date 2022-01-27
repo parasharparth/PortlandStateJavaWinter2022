@@ -70,8 +70,8 @@ public class Flight extends AbstractFlight {
     this.src = source;
   }
 
-  public void setDepart(String date, String time) {
-    String finaldatetime = date + " " + time ;
+  public void setDepart(String date, String time, String ampm) {
+    String finaldatetime = date + " " + time + " " + ampm;
     try{
       this.dprt = formatter.parse(finaldatetime);
     }
@@ -86,14 +86,26 @@ public class Flight extends AbstractFlight {
     }
 
 
-  public void setArrive(String date, String time) {
-    String finaldatetime = date + " " + time;
+  public void setArrive(String date, String time, String ampm) {
+    String finaldatetime = date + " " + time + " " + ampm;
     try{
       this.arrv = formatter.parse(finaldatetime);
     }
     catch (ParseException e){
       System.err.println("Please verify the format for arriving date and time or there might be some missing arguments");
       System.exit(1);
+    }
+  }
+
+  /**
+   * This method ensures that the departure time is before arrival time
+   */
+  public boolean checkdeparturebeforearrival(){
+    if(this.dprt.compareTo(this.arrv) > 0){
+      return false;
+    }
+    else{
+      return true;
     }
   }
 }
