@@ -59,7 +59,7 @@ class Project1Test extends InvokeMainTestCase {
   @Test
   public void testreadme() {
     MainMethodResult result = invokeMain(new String[] {"-README"});
-    assertThat(result.getExitCode(), equalTo(0));
+    assertThat(result.getExitCode(), equalTo(1));
     assertThat(result.getTextWrittenToStandardOut(), containsString("Name: Parth Parashar"));
   }
 
@@ -81,7 +81,7 @@ class Project1Test extends InvokeMainTestCase {
   public void missingCommandLineArguments(){
     MainMethodResult result = invokeMain(new String[] {"-print", "emirates", "123", "pdx"});
     assertThat(result.getExitCode(), equalTo(1));
-    assertThat(result.getTextWrittenToStandardError(), containsString("Missing command line arguments"));
+    assertThat(result.getTextWrittenToStandardError(), containsString("There are some missing arguments"));
   }
 
   @Test
@@ -109,7 +109,7 @@ class Project1Test extends InvokeMainTestCase {
   public void toomanyCommandLineArguments(){
     MainMethodResult result = invokeMain(new String[] {"-print", "emirates", "123", "pdx", "03/03/2017", "12:00", "dubai", "09/09/2017", "16:00", "dubai"});
     assertThat(result.getExitCode(), equalTo(1));
-    assertThat(result.getTextWrittenToStandardError(), containsString("Please check the arguments"));
+    assertThat(result.getTextWrittenToStandardError(), containsString("There are some missing arguments  or the format was not correct"));
   }
 
   @Test
