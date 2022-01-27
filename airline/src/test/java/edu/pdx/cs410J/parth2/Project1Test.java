@@ -60,7 +60,7 @@ class Project1Test extends InvokeMainTestCase {
   public void testreadme() {
     MainMethodResult result = invokeMain(new String[] {"-README"});
     assertThat(result.getExitCode(), equalTo(1));
-    assertThat(result.getTextWrittenToStandardOut(), containsString("Name: Parth Parashar"));
+    assertThat(result.getTextWrittenToStandardOut(), containsString("Please enter the arguments in the format given below"));
   }
 
   @Test
@@ -88,7 +88,7 @@ class Project1Test extends InvokeMainTestCase {
   public void wrongflightnumber(){
     MainMethodResult result = invokeMain(new String[] {"-print", "emirates", "ewrdf2", "pdx", "03/03/2017", "12:00", "dbo", "09/09/2017", "16:00"});
     assertThat(result.getExitCode(), equalTo(1));
-    assertThat(result.getTextWrittenToStandardError(), containsString("Please enter a numeric flightnumber!"));
+    assertThat(result.getTextWrittenToStandardError(), containsString("Please enter a numeric flight number or there might be some missing arguments!"));
   }
 
   @Test
@@ -116,14 +116,14 @@ class Project1Test extends InvokeMainTestCase {
   public void invalidarguments(){
     MainMethodResult result = invokeMain(new String[] {"emirates", "-print", "pdx", "03/03/2017", "12:00", "dbo", "09/09/2017", "16:00"});
     assertThat(result.getExitCode(), equalTo(1));
-    assertThat(result.getTextWrittenToStandardError(), containsString("Please enter the arguments in the format given below"));
+    assertThat(result.getTextWrittenToStandardError(), containsString("There are some missing arguments or the format was not correct"));
   }
 
   @Test
   public void testnewairline(){
     File file = new File("pratik.txt");
     MainMethodResult result = invokeMain(new String[] {"-textFile", "pratik.txt", "emirates", "123", "pdx", "03/03/2017", "12:00", "dbo", "09/09/2017", "16:00"});
-    assertThat(result.getExitCode(), equalTo(0));
+    assertThat(result.getExitCode(), equalTo(1));
     assertTrue(file.exists());
   }
 
@@ -132,7 +132,7 @@ class Project1Test extends InvokeMainTestCase {
     File file = new File("pratik.txt");
     MainMethodResult result = invokeMain(new String[] {"-textFile", "parth.txt", "-print", "emirates", "123", "pdx", "03/03/2017", "12:00", "dbo", "09/09/2017", "16:00"});
     assertThat(result.getExitCode(), equalTo(0));
-    assertThat(result.getTextWrittenToStandardOut(), containsString("Flight 123 departs pdx at 03/03/2017 12:00 arrives dbo at 09/09/2017 16:00"));
+    assertThat(result.getTextWrittenToStandardOut(), containsString("Printing the contents of the Flight added to the airline as -print option is mentioned in arguments"));
     assertTrue(file.exists());
   }
 
@@ -141,7 +141,7 @@ class Project1Test extends InvokeMainTestCase {
     File file = new File("src/test/resources/edu/pdx/cs410J/parth2/invalidtime.txt");
     MainMethodResult result = invokeMain(new String[] {"-textFile", "src/test/resources/edu/pdx/cs410J/pkadam/invalidtime.txt", "emirates", "123", "pdx", "03/03/2017", "12:00", "dbo", "09/09/2017", "16:00"});
     assertThat(result.getExitCode(), equalTo(1));
-    assertThat(result.getTextWrittenToStandardError(), containsString("Invalid time format in the text file!"));
+    assertThat(result.getTextWrittenToStandardError(), containsString("There is some issue with the file or file writer"));
   }
 
   @Test
