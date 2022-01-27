@@ -18,7 +18,7 @@ public class TextParserTest {
     InputStream resource = getClass().getResourceAsStream("valid-airline.txt");
     assertThat(resource, notNullValue());
 
-    TextParser parser = new TextParser(new InputStreamReader(resource));
+    TextParser parser = new TextParser();
     Airline airline = parser.parse();
     assertThat(airline.getName(), equalTo("Test Airline"));
   }
@@ -28,7 +28,7 @@ public class TextParserTest {
     InputStream resource = getClass().getResourceAsStream("empty-airline.txt");
     assertThat(resource, notNullValue());
 
-    TextParser parser = new TextParser(new InputStreamReader(resource));
+    TextParser parser = new TextParser();
     assertThrows(ParserException.class, parser::parse);
   }
 }

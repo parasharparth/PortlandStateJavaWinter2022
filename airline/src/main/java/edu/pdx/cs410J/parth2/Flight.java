@@ -1,47 +1,49 @@
 package edu.pdx.cs410J.parth2;
 
 import edu.pdx.cs410J.AbstractFlight;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
-import java.util.Locale;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Flight extends AbstractFlight {
+
+  SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy hh:mm");
+  int flightnum;
+  String src, dst;
+  Date dprt, arrv;
+
   @Override
   public int getNumber() {
-    return 42;
+    return flightnum;
   }
 
   @Override
   public String getSource() {
-    throw new UnsupportedOperationException("This method is not implemented yet");
+      return this.src;
   }
 
   @Override
   public String getDepartureString() {
-    throw new UnsupportedOperationException("This method is not implemented yet");
+
+    String strDate = formatter.format(dprt);
+    return strDate;
   }
 
   @Override
   public String getDestination() {
-    throw new UnsupportedOperationException("This method is not implemented yet");
+   return dst;
   }
 
   @Override
   public String getArrivalString() {
-    throw new UnsupportedOperationException("This method is not implemented yet");
+
+    String strDate = formatter.format(arrv);
+    return strDate;
   }
-
-  SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy hh:mm");
-
-  int flightnum;
-  String src, dst;
-  Date dprt, arrv;
 
   public void setFlightnum(String number) {
     int num = 0;
@@ -49,7 +51,8 @@ public class Flight extends AbstractFlight {
       num = Integer.parseInt(number);
     }
     catch(NumberFormatException e) {
-      System.err.println("Please enter a numeric flightnumber!");
+      e.printStackTrace();
+      System.err.println("Please enter a numeric flight number or there might be some missing arguments!");
       System.exit(1);
     }
     String numeric = "[0-9]+";
@@ -59,69 +62,41 @@ public class Flight extends AbstractFlight {
       this.flightnum = num;
     }
     else {
-      System.out.println("Please check the flightnumber!");
+      System.out.println("Please check the flight number or there might be some missing arguments!");
       System.exit(1);
     }
   }
-  /**
-   * This method sets the source of the flight
-   * @param source the three letter code of the source of flight
-   */
+
   public void setSrc(String source) {
-    String sourceuppercase = source.toUpperCase();
     this.src = source;
   }
 
-  /**
-   * This method sets the departure date and time of a flight from the source
-   * @param date The date when the flight departs
-   * @param time The date when the flight arrives
-   */
   public void setDepart(String date, String time) {
     String finaldatetime = date + " " + time ;
     try{
       this.dprt = formatter.parse(finaldatetime);
     }
     catch (ParseException e){
-      System.err.println("Please verify the format for departing date and time");
+      System.err.println("Please verify the format for departing date and time or there might be some missing arguments");
       System.exit(1);
     }
   }
 
-  /**
-   * This method sets the destination of the flight
-   * @param dest The three letter code of the destination of the flight
-   */
   public void setDest(String dest) {
-    String destuppercase = dest.toUpperCase();
-    String codex = "[a-zA-Z]{3}";
-    Pattern pattern = Pattern.compile(codex);
-    Matcher matcher = pattern.matcher(dest);
-    if (matcher.matches()) {
       this.dst = dest;
     }
-    else {
-      System.err.println("Please check the code for the destination!");
-      System.exit(1);
-    }
-  }
 
-  /**
-   * This method sets the arrival date and time of a flight at the destination
-   * @param date The date when the flight arrives
-   * @param time The time when the flight arrives
-   */
+
   public void setArrive(String date, String time) {
     String finaldatetime = date + " " + time;
     try{
       this.arrv = formatter.parse(finaldatetime);
     }
     catch (ParseException e){
-      System.err.println("Please verify the format for arriving date and time");
+      System.err.println("Please verify the format for arriving date and time or there might be some missing arguments");
       System.exit(1);
     }
   }
- //this code
 }
 
 
