@@ -39,12 +39,12 @@ class Project1Test extends InvokeMainTestCase {
   /**
    * Tests that invoking the main method with no arguments issues an error
    */
-  @Test
-  public void testreadme() {
-    MainMethodResult result = invokeMain(new String[] {"-README"});
-    assertThat(result.getExitCode(), equalTo(0));
-    assertThat(result.getTextWrittenToStandardOut(), containsString("Name: Parth Parashar"));
-  }
+//  @Test
+//  public void testreadme() {
+//    MainMethodResult result = invokeMain(new String[] {"-README"});
+//    assertThat(result.getExitCode(), equalTo(0));
+//    assertThat(result.getTextWrittenToStandardOut(), containsString("Name: Parth Parashar"));
+//  }
 
 //  @Test
 //  public void testprint() {
@@ -61,12 +61,12 @@ class Project1Test extends InvokeMainTestCase {
     assertThat(result.getTextWrittenToStandardError(), containsString("No arguments!"));
   }
 
-  @Test
-  public void missingCommandLineArguments(){
-    MainMethodResult result = invokeMain(new String[] {"-print", "emirates", "123", "pdx"});
-    assertThat(result.getExitCode(), equalTo(1));
-    assertThat(result.getTextWrittenToStandardError(), containsString("Missing command line arguments"));
-  }
+//  @Test
+//  public void missingCommandLineArguments(){
+//    MainMethodResult result = invokeMain(new String[] {"-print", "emirates", "123", "pdx"});
+//    assertThat(result.getExitCode(), equalTo(1));
+//    assertThat(result.getTextWrittenToStandardError(), containsString("Missing command line arguments"));
+//  }
 
   @Test
   public void toomanyCommandLineArguments(){
@@ -75,9 +75,9 @@ class Project1Test extends InvokeMainTestCase {
     assertThat(result.getTextWrittenToStandardError(), containsString("Please check the arguments"));
   }
 
-  @Test
-  public void testnewairline(){
-    MainMethodResult result = invokeMain(new String[] {"-textFile", "parth.txt", "emirates", "123", "pdx", "03/03/2022", "12:00", "dbo", "09/09/2022", "16:00"});
-    assertThat(result.getExitCode(), equalTo(0));
-  }
+//  @Test
+//  public void testnewairline(){
+//    MainMethodResult result = invokeMain(new String[] {"-textFile", "parth.txt", "emirates", "123", "pdx", "03/03/2022", "12:00", "dbo", "09/09/2022", "16:00"});
+//    assertThat(result.getExitCode(), equalTo(0));
+//  }
 }
