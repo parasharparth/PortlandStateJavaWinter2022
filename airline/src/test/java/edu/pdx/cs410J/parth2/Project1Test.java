@@ -68,12 +68,12 @@ class Project1Test extends InvokeMainTestCase {
 //    assertThat(result.getTextWrittenToStandardError(), containsString("Missing command line arguments"));
 //  }
 
-  @Test
-  public void toomanyCommandLineArguments(){
-    MainMethodResult result = invokeMain(new String[] {"-print", "emirates", "123", "pdx", "03/03/2022", "12:00", "dubai", "09/09/2022", "16:00", "dubai"});
-    assertThat(result.getExitCode(), equalTo(1));
-    assertThat(result.getTextWrittenToStandardError(), containsString("Please check the arguments"));
-  }
+//  @Test
+//  public void toomanyCommandLineArguments(){
+//    MainMethodResult result = invokeMain(new String[] {"-print", "emirates", "123", "pdx", "03/03/2022", "12:00", "dubai", "09/09/2022", "16:00", "dubai"});
+//    assertThat(result.getExitCode(), equalTo(1));
+//    assertThat(result.getTextWrittenToStandardError(), containsString("Please check the arguments"));
+//  }
 
 //  @Test
 //  public void testnewairline(){
