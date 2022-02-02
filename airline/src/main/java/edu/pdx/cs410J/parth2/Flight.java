@@ -51,7 +51,7 @@ public class Flight extends AbstractFlight {
       num = Integer.parseInt(number);
     }
     catch(NumberFormatException e) {
-      System.err.println("Please enter a numeric flight number!");
+      System.err.println("Please enter a numeric flightnumber!");
       System.exit(1);
     }
     String numeric = "[0-9]+";
