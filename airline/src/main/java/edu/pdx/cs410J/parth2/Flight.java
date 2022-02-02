@@ -51,7 +51,7 @@ public class Flight extends AbstractFlight {
       num = Integer.parseInt(number);
     }
     catch(NumberFormatException e) {
-      System.err.println("Please enter a numeric flight number or there might be some missing arguments!");
+      System.err.println("Please enter a numeric flight number!");
       System.exit(1);
     }
     String numeric = "[0-9]+";
@@ -61,7 +61,7 @@ public class Flight extends AbstractFlight {
       this.flightnum = num;
     }
     else {
-      System.out.println("Please check the flight number or there might be some missing arguments!");
+      System.out.println("Please check the flight number!");
       System.exit(1);
     }
   }
@@ -76,7 +76,7 @@ public class Flight extends AbstractFlight {
       this.dprt = formatter.parse(finaldatetime);
     }
     catch (ParseException e){
-      System.err.println("Please verify the format for departing date and time or there might be some missing arguments");
+      System.err.println("Please verify the format for departing date and time");
       System.exit(1);
     }
   }
@@ -92,7 +92,7 @@ public class Flight extends AbstractFlight {
       this.arrv = formatter.parse(finaldatetime);
     }
     catch (ParseException e){
-      System.err.println("Please verify the format for arriving date and time or there might be some missing arguments");
+      System.err.println("Please verify the format for arriving date and time");
       System.exit(1);
     }
   }
