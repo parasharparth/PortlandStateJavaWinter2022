@@ -159,6 +159,7 @@ public class Project3 {
                 }
                 args[k] = first;
                 args[k+1] = second;
+                System.out.println("checking the pretty print invokation");
                 Object[] objs = compute(args);
                 PrettyPrinter printer = new PrettyPrinter();
                 printer.setFilename(args[11]);
@@ -440,8 +441,10 @@ public class Project3 {
         }
 
         //This is the case when there are more number of args than required
-        System.err.println("Too many arguments!");
-        System.exit(1);
+        if(args.length > 14) {
+            System.err.println("Too many arguments!");
+            System.exit(1);
+        }
     }
 
     /**

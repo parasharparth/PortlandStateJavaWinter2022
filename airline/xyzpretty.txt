@@ -1,0 +1,20 @@
+
+Airline : emirates
+Flightnumber : 123
+Source : iah
+Date of Departure : 03/03/2017
+Time of Departure : 12:00 am
+Destination : iad
+Date of Arrival : 03/03/2017
+Time of Arrival : 4:00 pm
+Duration (minutes) : 960
+
+Airline : emirates
+Flightnumber : 123
+Source : iah
+Date of Departure : 03/03/2017
+Time of Departure : 12:00 am
+Destination : iad
+Date of Arrival : 03/03/2017
+Time of Arrival : 4:00 pm
+Duration (minutes) : 960

@@ -5,9 +5,7 @@ import edu.pdx.cs410J.AirlineDumper;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import javax.lang.model.element.Element;
 import java.io.*;
-import java.util.*;
 
 public class TextDumper implements AirlineDumper<Airline> {
   String filename;

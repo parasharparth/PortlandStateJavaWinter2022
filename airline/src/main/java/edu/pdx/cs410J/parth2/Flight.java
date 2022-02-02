@@ -1,8 +1,6 @@
 package edu.pdx.cs410J.parth2;
 
 import edu.pdx.cs410J.AbstractFlight;
-
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -11,7 +9,7 @@ import java.util.regex.Pattern;
 
 public class Flight extends AbstractFlight {
 
-  SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy hh:mm");
+  SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy hh:mm aa");
   int flightnum;
   String src, dst;
   Date dprt, arrv;
@@ -109,6 +107,45 @@ public class Flight extends AbstractFlight {
     }
   }
 
+  /**
+   * This method return the arrival date and time of a flight
+   * @return the arrival date in the form of a Date object
+   */
+  @Override
+  public Date getArrival() {
+    return this.arrv;
+  }
+
+  /**
+   * This method return the departure date and time of a flight
+   * @return the departure date in the form of a Date object
+   */
+  @Override
+  public Date getDeparture() {
+    return this.dprt;
+  }
+
+  /**
+   * This method compares the current object to the specified object.
+   * This method is used mainly to sort the flights by their source. If the source is same, it sorts by departure time.
+   * @param o the Flight object to compare the current object to
+   * @return it returns a positive integer if current object is greater than specified object,
+  it returns a negative integer if current object is lesser than specified object,
+  it returns 0 integer if current object is equal to specified object
+   */
+  public int compareTo(Flight o) {
+    if(this.getSource().compareToIgnoreCase(o.getSource()) == 0){
+      try {
+        Date d1 = formatter.parse(this.getDepartureString());
+        Date d2 = formatter.parse(o.getDepartureString());
+        return d1.compareTo(d2);
+      } catch (ParseException e) {
+        e.printStackTrace();
+        System.exit(1);
+      }
+    }
+    return this.getSource().compareToIgnoreCase(o.getSource());
+  }
 }
 
 

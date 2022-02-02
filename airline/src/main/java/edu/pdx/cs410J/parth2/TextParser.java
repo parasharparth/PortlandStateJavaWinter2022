@@ -185,12 +185,12 @@ public class TextParser implements AirlineParser {
    * @param ampm The time of the day (am or pm)
    */
   public static void checkdatetime(String date, String time, String ampm) {
-    SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy hh:mm a");
+    SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy hh:mm aa");
     String finaldatetime = date + " " + time + " " + ampm;
     try{
       Date d = formatter.parse(finaldatetime);
     }
-    catch (ParseException e){
+    catch (Exception e){
       System.err.println("Please verify the format for datetime in the text file");
       System.exit(1);
     }

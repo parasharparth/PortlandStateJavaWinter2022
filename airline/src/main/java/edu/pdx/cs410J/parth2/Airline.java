@@ -23,7 +23,7 @@ public class Airline extends AbstractAirline<Flight> {
   @Override
   public void addFlight(Flight flight) {
     arrli.add(flight);
-    System.out.println(arrli.toString());
+    //System.out.println(arrli.toString());
   }
 
   @Override
