@@ -15,4 +15,5 @@ public class Project2Test extends InvokeMainTestCase {
 //        assertThat(result.getExitCode(), equalTo(1));
 //        assertThat(result.getTextWrittenToStandardError(), containsString("No arguments!"));
 //    }
+
 }

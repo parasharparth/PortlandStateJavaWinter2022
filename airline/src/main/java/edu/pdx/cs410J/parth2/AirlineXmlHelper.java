@@ -20,4 +20,5 @@ public class AirlineXmlHelper extends ProjectXmlHelper {
   public AirlineXmlHelper() {
     super(PUBLIC_ID, SYSTEM_ID, "airline.dtd");
   }
+
 }

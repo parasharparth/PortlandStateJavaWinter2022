@@ -488,4 +488,5 @@ public class Project3 {
         System.out.println("PrettyPrinter class - it prints the list of flights in an airline in a pretty way");
         System.exit(0);
     }
+
 }

@@ -32,6 +32,7 @@ public class TextDumper implements AirlineDumper {
     out.close();
   }
 
+
   /**
    * This method sets the class variable "filename" which is later used in the dump method
    * @param filename

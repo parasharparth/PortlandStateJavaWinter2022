@@ -218,4 +218,5 @@ class Project1Test extends InvokeMainTestCase {
     assertThat(result.getExitCode(), equalTo(1));
     assertThat(result.getTextWrittenToStandardError(), containsString("Please check the arguments"));
   }
+
 }

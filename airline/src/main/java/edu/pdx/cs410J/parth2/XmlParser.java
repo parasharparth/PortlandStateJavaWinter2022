@@ -30,6 +30,7 @@ public class XmlParser implements AirlineParser {
     String airLineName;
     Airline airline = null;
 
+
     /**
      *  Stores the airline name and fileNames provided passed in the command line.
      *

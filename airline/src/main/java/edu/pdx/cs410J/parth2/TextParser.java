@@ -20,6 +20,7 @@ import java.util.regex.Pattern;
 public class TextParser implements AirlineParser {
   String filename, airlinename;
 
+
   /**
    * This method sets the class variables to be used in the parse() method
    * @param fname the name of the text file to parse

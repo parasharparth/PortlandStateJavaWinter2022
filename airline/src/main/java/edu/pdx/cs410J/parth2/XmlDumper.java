@@ -29,6 +29,7 @@ public class XmlDumper implements AirlineDumper {
     Document document = null;
     Airline airline = null;
 
+
     /**
      * Stores the fileName
      * @param xmlFileName
