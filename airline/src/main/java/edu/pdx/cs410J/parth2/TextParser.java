@@ -104,6 +104,7 @@ public class TextParser implements AirlineParser {
       System.exit(1);
     }
     airline.setName(lines.get(0));
+
     //This for loop checks each and every detail of every flight in the text file
     for(int i = 1; i < lines.size(); i++) {
       String[] words = lines.get(i).split(" ");
@@ -123,7 +124,9 @@ public class TextParser implements AirlineParser {
       flight.setDest(words[9]);
       flight.setArrive(words[11], words[12], words[13]);
       if(flight.checkdeparturebeforearrival()){
+
         airline.addFlight(flight);
+
       }
       else{
         System.err.println("The flight's arrival time is before its departure time in the text file");

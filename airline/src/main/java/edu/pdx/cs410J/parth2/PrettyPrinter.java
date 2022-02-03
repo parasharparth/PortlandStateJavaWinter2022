@@ -63,7 +63,7 @@ public class PrettyPrinter implements AirlineDumper<Airline> {
 
         ArrayList arrli = (ArrayList) abstractAirline.getFlights();
         String[] flights = new String[arrli.size()];
-       // Collections.sort(arrli);
+        Collections.sort(arrli);
         Scanner sc = null;
 
         //This is a case when the pretty file is not present

@@ -1,34 +1,43 @@
 package edu.pdx.cs410J.parth2;
 
 import edu.pdx.cs410J.AbstractFlight;
+import edu.pdx.cs410J.AirportNames;
+
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Flight extends AbstractFlight {
+public class Flight extends AbstractFlight implements Comparable<Flight>{
 
   SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy hh:mm aa");
+  Map names = AirportNames.getNamesMap();
   int flightnum;
   String src, dst;
   Date dprt, arrv;
 
   @Override
   public int getNumber() {
+
     return flightnum;
   }
 
   @Override
   public String getSource() {
-      return this.src;
+
+    return this.src;
   }
 
   @Override
   public String getDepartureString() {
 
-    String strDate = formatter.format(dprt);
-    return strDate;
+    SimpleDateFormat dater = new SimpleDateFormat("MM/dd/yyyy");
+    String datestring = dater.format(this.dprt);
+    String timestring = formatter.getTimeInstance(DateFormat.SHORT).format(this.dprt);
+    return datestring + " " + timestring;
   }
 
   @Override
@@ -39,8 +48,10 @@ public class Flight extends AbstractFlight {
   @Override
   public String getArrivalString() {
 
-    String strDate = formatter.format(arrv);
-    return strDate;
+    SimpleDateFormat dater = new SimpleDateFormat("MM/dd/yyyy");
+    String datestring = dater.format(this.arrv);
+    String timestring = formatter.getTimeInstance(DateFormat.SHORT).format(this.arrv);
+    return datestring + " " + timestring;
   }
 
   public void setFlightnum(String number) {
@@ -65,6 +76,12 @@ public class Flight extends AbstractFlight {
   }
 
   public void setSrc(String source) {
+
+    String sourceuppercase = source.toUpperCase();
+    if(!names.containsKey(sourceuppercase)){
+      System.err.println("The three-letter code for the source is invalid");
+      System.exit(1);
+    }
     this.src = source;
   }
 
@@ -80,7 +97,22 @@ public class Flight extends AbstractFlight {
   }
 
   public void setDest(String dest) {
+    String destuppercase = dest.toUpperCase();
+    if(!names.containsKey(destuppercase)){
+      System.err.println("The three-letter code for the source is invalid");
+      System.exit(1);
+    }
+    String codex = "[a-zA-Z]{3}";
+    Pattern pattern = Pattern.compile(codex);
+    Matcher matcher = pattern.matcher(dest);
+    if (matcher.matches()) {
       this.dst = dest;
+    }
+    else {
+      System.err.println("Please check the code for the destination!");
+      System.exit(1);
+    }
+
     }
 
 
