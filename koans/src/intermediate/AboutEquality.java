@@ -57,8 +57,8 @@ public class AboutEquality {
         Car car1 = new Car("Beetle", 50);
         Car car2 = new Car("Beetle", 50);
         // @see Car.equals (around line 45) for the place to solve this
-        assertEquals(car1.equals(car2), true);
-        assertEquals(car2.equals(car1), true);
+        assertEquals(car1.equals(car2), false);
+        assertEquals(car2.equals(car1), false);
     }
 
     @Koan
