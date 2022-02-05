@@ -35,7 +35,7 @@ public class AboutBitwiseOperators {
         boolean a = false;
         if (a = true) i++;
         assertEquals(a, true);
-        assertEquals(i, false);
+        assertEquals(i, 2);
         // How could you write the condition 'with a twist' to avoid this trap?
     }
 
