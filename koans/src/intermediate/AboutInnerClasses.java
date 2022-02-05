@@ -86,7 +86,7 @@ public class AboutInnerClasses {
             int theAnswer() {
                 return 23;
             }
-        };// <- Why do you need a semicolon here?
+        };// <- Why do you need a semicolon here?   //because this is a lambda expression for declaring and defining a function
         assertEquals(anonymous.theAnswer(), 23);
     }
 
@@ -94,7 +94,7 @@ public class AboutInnerClasses {
     public void creatingAnonymousInnerClassesToImplementInterface() {
         Ignoreable ignoreable = new Ignoreable() {
             public String ignoreAll() {
-                return null;
+                return "SomeInterestingString";
             }
         }; // Complete the code so that the statement below is correct.
         // Look at the koan above for inspiration
