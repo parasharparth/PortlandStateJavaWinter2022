@@ -47,7 +47,7 @@ public class AboutDates {
     @Koan
     public void usingDateFormatToFormatDate() {
         String formattedDate = DateFormat.getDateInstance().format(date);
-        assertEquals(formattedDate, __);
+        assertEquals(formattedDate, "Mar 3, 1973");
     }
 
     @Koan
