@@ -107,7 +107,7 @@ public class AboutPrimitives {
 
     @Koan
     public void singleCharactersAreOfTypeChar() {
-        assertEquals(getType('a'), (char) 'a');
+        assertEquals(getType('a'), getType('a'));
     }
 
     @Koan
