@@ -34,7 +34,7 @@ public class AboutLocale {
         assertEquals(locBR.getDisplayCountry(locBR), "Brasil");
 
         Locale locCH = new Locale("it", "CH");
-        assertEquals(locCH.getDisplayCountry(), __);
+        assertEquals(locCH.getDisplayCountry(), "Switzerland");
         assertEquals(locCH.getDisplayCountry(locCH), __);
         assertEquals(locCH.getDisplayCountry(new Locale("de", "CH")), __);
     }
