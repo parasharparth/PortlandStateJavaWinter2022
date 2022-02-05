@@ -154,7 +154,7 @@ public class AboutPrimitives {
 
     @Koan
     public void doublesHaveALargeRange() {
-        assertEquals(Double.MIN_VALUE, __);
+        assertEquals(Double.MIN_VALUE, 4.9E-324);
         assertEquals(Double.MAX_VALUE, __);
     }
 
