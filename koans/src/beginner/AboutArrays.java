@@ -35,7 +35,7 @@ public class AboutArrays {
     public void arraysHelperClassEqualsMethodConsidersElementsWhenDeterminingEquality() {
         int[] array0 = new int[]{0};
         int[] array1 = new int[]{0};
-        assertEquals(Arrays.equals(array0, array1), __);    // whew - what most people assume
+        assertEquals(Arrays.equals(array0, array1), true);    // whew - what most people assume
         // about equals in regard to arrays! (logical equality)
     }
 
@@ -44,7 +44,7 @@ public class AboutArrays {
         int[] array0 = new int[]{0};
         int[] array1 = new int[]{0};
         // whew - what most people assume about hashCode in regard to arrays!
-        assertEquals(Integer.valueOf(Arrays.hashCode(array0)).equals(Arrays.hashCode(array1)), __);
+        assertEquals(Integer.valueOf(Arrays.hashCode(array0)).equals(Arrays.hashCode(array1)), false);
     }
 
     @Koan
