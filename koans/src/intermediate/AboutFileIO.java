@@ -43,7 +43,7 @@ public class AboutFileIO {
         assertEquals(size, 22);
         String expected = new String(in);
         assertEquals(expected.length(), 22);
-        assertEquals(expected, __);
+        assertEquals(expected, "First line\nSecond line");
         file.delete();
     }
 
