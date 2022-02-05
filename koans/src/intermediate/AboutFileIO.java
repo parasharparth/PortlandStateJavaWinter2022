@@ -96,8 +96,7 @@ public class AboutFileIO {
                 = new BufferedReader(new FileReader(file));
         String st;
         while ((st = br.readLine()) != null) {
-            sb.append(st);
-            sb.append(System.getProperty("line.separator"));
+            sb.append(st).append("\n");
         }
 
         assertEquals(sb.toString(), "1. line\n2. line");
