@@ -17,7 +17,7 @@ public class AboutMocks {
     }
 
     static class ClassUnderTest {
-        Collaborator c;
+        Collaborator c = new ExplosiveCollaborator();
 
         public ClassUnderTest() {
             // default is to pass a broken Collaborator, test should pass one
