@@ -157,7 +157,7 @@ public class AboutExceptions {
         } catch (IllegalArgumentException ex) {
             s = "caught an IllegalArgumentException";
         }
-        assertEquals(s, (int)5);
+        assertEquals(s, "5");
     }
 
     private int validateUsingIllegalArgumentException(String str) {
