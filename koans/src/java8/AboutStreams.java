@@ -65,14 +65,14 @@ public class AboutStreams {
         String join = places.stream()
                 .reduce((accumulated, cityName) -> accumulated + "\", \"" + cityName)
                 .get();
-        assertEquals(join, "Belgrade\\\", \\\"Zagreb\\\", \\\"Sarajevo\\\", \\\"Skopje\\\", \\\"Ljubljana\\\", \\\"Podgorica");
+        assertEquals(join, "Belgrade\", \"Zagreb\", \"Sarajevo\", \"Skopje\", \"Ljubljana\", \"Podgorica");
     }
 
     @Koan
     public void stringJoin() {
         String join = places.stream()
                 .collect(Collectors.joining("\", \""));
-        assertEquals(join, "Belgrade\\\", \\\"Zagreb\\\", \\\"Sarajevo\\\", \\\"Skopje\\\", \\\"Ljubljana\\\", \\\"Podgorica");
+        assertEquals(join, "Belgrade\", \"Zagreb\", \"Sarajevo\", \"Skopje\", \"Ljubljana\", \"Podgorica");
     }
 
     @Koan
