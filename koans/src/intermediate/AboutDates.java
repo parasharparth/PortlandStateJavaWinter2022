@@ -33,7 +33,7 @@ public class AboutDates {
         Calendar cal = Calendar.getInstance();
         cal.setTime(date);
         cal.add(Calendar.MONTH, 1);
-        assertEquals(cal.getTime().toString(), __);
+        assertEquals(cal.getTime().toString(), "Tue Apr 03 05:33:21 PST 1973");
     }
 
     @Koan
