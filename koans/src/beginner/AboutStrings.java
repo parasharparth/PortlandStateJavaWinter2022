@@ -69,9 +69,9 @@ public class AboutStrings {
         String one = "one";
         String space = " ";
         String two = "two";
-        assertEquals(one + space + two, __);
-        assertEquals(space + one + two, __);
-        assertEquals(two + space + one, __);
+        assertEquals(one + space + two, "one two");
+        assertEquals(space + one + two, " onetwo");
+        assertEquals(two + space + one, "two one");
     }
 
     @Koan
