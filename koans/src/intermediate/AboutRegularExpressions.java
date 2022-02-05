@@ -34,7 +34,7 @@ public class AboutRegularExpressions {
         assertEquals(m.find(), true);
         assertEquals(m.start(), 6);
         assertEquals(m.find(), true);
-        assertEquals(m.start(), __);
+        assertEquals(m.start(), 12);
     }
 
     @Koan
@@ -42,8 +42,8 @@ public class AboutRegularExpressions {
         Pattern p = Pattern.compile("end\\.");
         Matcher m = p.matcher("begin. end.");
         // index 01234567890
-        assertEquals(m.find(), __);
-        assertEquals(m.start(), __);
+        assertEquals(m.find(), true);
+        assertEquals(m.start(), 6);
     }
 
     @Koan
