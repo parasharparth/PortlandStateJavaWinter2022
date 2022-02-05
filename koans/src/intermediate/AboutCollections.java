@@ -87,7 +87,7 @@ public class AboutCollections {
         map.put("f", "Fox");
         SortedMap<String, String> backedMap = map.subMap("c", "f");
         assertEquals(backedMap.size(), 2);
-        assertEquals(map.size(), 6);
+        assertEquals(map.size(), 5);
         backedMap.put("d", "Dog");
         assertEquals(backedMap.size(), 3);
         assertEquals(map.size(), 6);
