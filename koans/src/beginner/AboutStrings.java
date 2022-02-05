@@ -139,8 +139,8 @@ public class AboutStrings {
     @Koan
     public void stringReplace() {
         String str = "I am a number ONE!";
-        assertEquals(str.replace("ONE", "TWO"), __);
-        assertEquals(str.replace("I am", "She is"),  __);
+        assertEquals(str.replace("ONE", "TWO"), "I am a number TWO!");
+        assertEquals(str.replace("I am", "She is"),  "She is a number ONE!");
     }
 
     @Koan
