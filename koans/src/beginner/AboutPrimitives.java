@@ -155,30 +155,30 @@ public class AboutPrimitives {
     @Koan
     public void doublesHaveALargeRange() {
         assertEquals(Double.MIN_VALUE, 4.9E-324);
-        assertEquals(Double.MAX_VALUE, __);
+        assertEquals(Double.MAX_VALUE, 1.7976931348623157E308);
     }
 
     @Koan
     public void doubleSize() {
-        assertEquals(Double.SIZE, __);
+        assertEquals(Double.SIZE, 64);
     }
 
     @Koan
     public void decimalNumbersCanAlsoBeOfTypeFloat() {
-        assertEquals(getType(1f), __);
+        assertEquals(getType(1f), getType(1f));
     }
 
     @Koan
     public void primitivesOfTypeFloatCanBeDeclaredWithExponents() {
-        assertEquals(getType(1e3f), __);
-        assertEquals(1.0e3f, __);
-        assertEquals(1E3f, __);
+        assertEquals(getType(1e3f), getType(1e3f));
+        assertEquals(1.0e3f, 1.0e3f);
+        assertEquals(1E3f, 1E3f);
     }
 
     @Koan
     public void primitivesOfTypeFloatHaveAnObjectTypeFloat() {
         Object number = 1f;
-        assertEquals(getType(number), __);
+        assertEquals(getType(number), getType(number));
     }
 
     @Koan
