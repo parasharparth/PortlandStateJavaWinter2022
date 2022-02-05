@@ -51,7 +51,7 @@ public class AboutLoops {
         for (int i = 1; i <= 16; i *= 2) {
             s += i + " ";
         }
-        assertEquals(s, __);
+        assertEquals(s, "1 2 4 8 16 ");
     }
 
     @Koan
