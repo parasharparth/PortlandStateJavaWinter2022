@@ -40,7 +40,7 @@ public class AboutStrings {
 
     @Koan
     public void stringIsEmpty() {
-        assertEquals("".isEmpty(), __);
+        assertEquals("".isEmpty(), true);
         assertEquals("one".isEmpty(), __);
         assertEquals(new String().isEmpty(), __);
         assertEquals(new String("").isEmpty(), __);
