@@ -44,7 +44,7 @@ public class AboutStrings {
         assertEquals("one".isEmpty(), false);
         assertEquals(new String().isEmpty(), true);
         assertEquals(new String("").isEmpty(), true);
-        assertEquals(new String("one").isEmpty(), __);
+        assertEquals(new String("one").isEmpty(), false);
     }
 
     @Koan
