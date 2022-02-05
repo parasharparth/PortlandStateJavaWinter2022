@@ -33,7 +33,7 @@ public class AboutLoops {
         for (int i = 5; i > 0; i--) {
             s += i + " ";
         }
-        assertEquals(s, __);
+        assertEquals(s, "5 4 3 2 1 ");
     }
 
     @Koan
