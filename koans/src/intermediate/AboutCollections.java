@@ -21,9 +21,9 @@ public class AboutCollections {
         list.add("Chicken");
         list.add("Dog");
         list.add("Chicken");
-        assertEquals(list.get(0), __);
-        assertEquals(list.get(1), __);
-        assertEquals(list.get(2), __);
+        assertEquals(list.get(0), "Chicken");
+        assertEquals(list.get(1), "Dog");
+        assertEquals(list.get(2), "Chicken");
     }
 
     @Koan
@@ -34,11 +34,11 @@ public class AboutCollections {
         queue.add("Cat");
         queue.add("Dog");
         assertEquals(queue.peek(), __);
-        assertEquals(queue.size(), __);
+        assertEquals(queue.size(), 2);
         assertEquals(queue.poll(), __);
-        assertEquals(queue.size(), __);
+        assertEquals(queue.size(), 2);
         assertEquals(queue.poll(), __);
-        assertEquals(queue.isEmpty(), __);
+        assertEquals(queue.isEmpty(), false);
     }
 
     @Koan
