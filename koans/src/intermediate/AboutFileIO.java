@@ -13,16 +13,16 @@ public class AboutFileIO {
     @Koan
     public void fileObjectDoesntCreateFile() {
         File f = new File("i-never.exist");
-        assertEquals(f.exists(), __);
+        assertEquals(f.exists(), false);
     }
 
     @Koan
     public void fileCreationAndDeletion() throws IOException {
         File f = new File("foo.txt");
         f.createNewFile();
-        assertEquals(f.exists(), __);
+        assertEquals(f.exists(), true);
         f.delete();
-        assertEquals(f.exists(), __);
+        assertEquals(f.exists(), false);
     }
 
     @Koan
@@ -61,8 +61,8 @@ public class AboutFileIO {
         BufferedReader br = null;
         try {
             br = new BufferedReader(fr);
-            assertEquals(br.readLine(), __); // first line
-            assertEquals(br.readLine(), __); // second line
+            assertEquals(br.readLine(), "First line"); // first line
+            assertEquals(br.readLine(), "Second line"); // second line
             assertEquals(br.readLine(), __); // what now?
         } finally {
             // anytime you open access to a file, you should close it or you may
