@@ -42,7 +42,7 @@ public class AboutFileIO {
         fr.close();
         assertEquals(size, 22);
         String expected = new String(in);
-        assertEquals(expected.length(), __);
+        assertEquals(expected.length(), 22);
         assertEquals(expected, __);
         file.delete();
     }
