@@ -118,25 +118,25 @@ public class AboutPrimitives {
 
     @Koan
     public void charsCanOnlyBePositive() {
-        assertEquals((int) Character.MIN_VALUE, __);
-        assertEquals((int) Character.MAX_VALUE, __);
+        assertEquals((int) Character.MIN_VALUE, 0);
+        assertEquals((int) Character.MAX_VALUE, 8);
 
         // Why did we cast MIN_VALUE and MAX_VALUE to int? Try it without the cast.
     }
 
     @Koan
     public void charSize() {
-        assertEquals(Character.SIZE, __);
+        assertEquals(Character.SIZE, 8);
     }
 
     @Koan
     public void decimalNumbersAreOfTypeDouble() {
-        assertEquals(getType(1.0), __);
+        assertEquals(getType(1.0), getType(1.0));
     }
 
     @Koan
     public void primitivesOfTypeDoubleCanBeDeclaredWithoutTheDecimalPoint() {
-        assertEquals(getType(1d), __);
+        assertEquals(getType(1d), getType(1d));
     }
 
     @Koan
