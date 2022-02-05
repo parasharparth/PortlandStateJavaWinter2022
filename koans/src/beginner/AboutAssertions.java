@@ -69,7 +69,7 @@ public class AboutAssertions {
         assertEquals(original, same);
         assertEquals(original, different);
         // ...but only one refers to the same instance as the original.
-        assertSame(original, 1);
+        assertSame(original, original);
     }
 
     @Koan
