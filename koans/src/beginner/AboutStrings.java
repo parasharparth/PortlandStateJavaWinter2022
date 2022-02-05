@@ -125,7 +125,7 @@ public class AboutStrings {
         assertEquals(str.substring(0), "I AM a number ONE!");
         assertEquals(str.substring(1), " AM a number ONE!");
         assertEquals(str.substring(5), "a number ONE!");
-        assertEquals(str.substring(14, 17), " ONE");
+        assertEquals(str.substring(14, 17), "ONE");
         assertEquals(str.substring(7, str.length()), "number ONE!");
     }
 
