@@ -17,7 +17,7 @@ public class AboutRegularExpressions {
         Pattern p = Pattern.compile("xyz");
         Matcher m = p.matcher("xyzxxxxyz");
         // index 012345678
-        assertEquals(m.find(), __);
+        assertEquals(m.find(), true);
         assertEquals(m.start(), __);
         assertEquals(m.find(), __);
         assertEquals(m.start(), __);
