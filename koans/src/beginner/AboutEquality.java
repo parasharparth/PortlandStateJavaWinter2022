@@ -19,7 +19,7 @@ public class AboutEquality {
     public void equalsMethodByDefaultTestsIfTwoObjectsAreTheSame() {
         Object object = new Object();
         assertEquals(object.equals(object), true);
-        assertEquals(object.equals(new Object()), __);
+        assertEquals(object.equals(new Object()), false);
     }
 
     @Koan
