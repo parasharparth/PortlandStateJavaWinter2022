@@ -36,7 +36,7 @@ public class AboutComparison {
         vwbeetle.horsepower = 50;
         Car porsche = new Car();
         porsche.horsepower = 300;
-        assertEquals(vwbeetle.compareTo(porsche), __);
+        assertEquals(vwbeetle.compareTo(porsche), -250);
     }
 
     static class RaceHorse {
