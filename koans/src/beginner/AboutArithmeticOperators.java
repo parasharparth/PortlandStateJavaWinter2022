@@ -30,7 +30,7 @@ public class AboutArithmeticOperators {
     @Koan
     public void minusMinusVariableMinusMinus() {
         int i = 1;
-        assertEquals(--i, __);
+        assertEquals(--i, 0);
         assertEquals(i, __);
         assertEquals(i--, __);
         assertEquals(i, __);
@@ -40,18 +40,18 @@ public class AboutArithmeticOperators {
     public void plusPlusVariablePlusPlus() {
         int i = 1;
         assertEquals(++i, __);
-        assertEquals(i, __);
-        assertEquals(i++, __);
-        assertEquals(i, __);
+        assertEquals(i, 1);
+        assertEquals(i++, 2);
+        assertEquals(i, 2);
     }
 
     @Koan
     public void timesAndDivInPlace() {
         int i = 1;
         i *= 2;
-        assertEquals(i, __);
+        assertEquals(i, 2);
         i /= 2;
-        assertEquals(i, __);
+        assertEquals(i, 1);
     }
 
 }
