@@ -14,9 +14,9 @@ public class AboutComparison {
     public void compareObjects() {
         String a = "abc";
         String b = "bcd";
-        assertEquals(a.compareTo(b), __);
-        assertEquals(a.compareTo(a), __);
-        assertEquals(b.compareTo(a), __);
+        assertEquals(a.compareTo(b), -1);
+        assertEquals(a.compareTo(a), 0);
+        assertEquals(b.compareTo(a), 1);
     }
 
     static class Car implements Comparable<Car> {
