@@ -164,7 +164,7 @@ public class AboutStrings {
             String.format("%s %s %s", "a", "b");
             fail("No Exception was thrown!");
         } catch (Exception e) {
-            assertEquals(e.getClass(), "insufficientArgumentsToStringFormatCausesAnError");
+            assertEquals(e.getClass(), "java.util.MissingFormatArgumentException");
             assertEquals(e.getMessage(), "No Exception was thrown!");
         }
     }
