@@ -83,7 +83,7 @@ public class AboutStrings {
     @Koan
     public void stringLowerCase() {
         String str = "I AM a number ONE!";
-        assertEquals(str.toLowerCase(), __);
+        assertEquals(str.toLowerCase(), "i am a number one!");
     }
 
     @Koan
