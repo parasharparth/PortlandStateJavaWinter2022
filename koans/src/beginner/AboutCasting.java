@@ -106,9 +106,9 @@ public class AboutCasting {
 
     @Koan
     public void complicatedCast() {
-        Grandparent parent = new Parent();
+        Parent parent = new Parent();
         // How can we access the parent's ability to "complain" - if the reference is held as a superclass?
-        assertEquals("TPS reports don't even have a cover letter!", true);
+        assertEquals("TPS reports don't even have a cover letter!", parent.complain());
     }
 
 }
