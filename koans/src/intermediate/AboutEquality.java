@@ -19,8 +19,8 @@ public class AboutEquality {
     public void equalObject() {
         Integer a = new Integer(1);
         Integer b = new Integer(1);
-        assertEquals(a.equals(b), false);
-        assertEquals(b.equals(a), false);
+        assertEquals(a.equals(b), true);
+        assertEquals(b.equals(a), true);
     }
 
     @Koan
