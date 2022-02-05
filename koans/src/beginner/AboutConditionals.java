@@ -182,8 +182,8 @@ public class AboutConditionals {
             x = "kthxbai";
         }
         assertEquals(x, "kthxbai");
-        assertEquals(trueCount.count, __);
-        assertEquals(falseCount.count, __);
+        assertEquals(trueCount.count, 1);
+        assertEquals(falseCount.count, 0);
     }
     
     class Counter {
