@@ -127,7 +127,7 @@ public class AboutLoops {
                 count++;
             }
         }
-        assertEquals(count, __);
+        assertEquals(count, 2);
     }
 
     @Koan
