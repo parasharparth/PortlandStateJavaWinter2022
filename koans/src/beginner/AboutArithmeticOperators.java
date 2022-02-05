@@ -39,10 +39,10 @@ public class AboutArithmeticOperators {
     @Koan
     public void plusPlusVariablePlusPlus() {
         int i = 1;
-        assertEquals(++i, __);
+        assertEquals(++i, 2);
         assertEquals(i, 2);
-        assertEquals(i++, 3);
-        assertEquals(i, 2);
+        assertEquals(i++, 2);
+        assertEquals(i, 3);
     }
 
     @Koan
