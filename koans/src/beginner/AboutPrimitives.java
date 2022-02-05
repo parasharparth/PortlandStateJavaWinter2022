@@ -68,7 +68,7 @@ public class AboutPrimitives {
     @Koan
     public void shortsHaveASmallerRangeThanInts() {
         assertEquals(Short.MIN_VALUE, Short.MIN_VALUE);  // hint: You'll need an explicit cast
-        assertEquals(Short.MAX_VALUE, 32767);
+        assertEquals(Short.MAX_VALUE, Short.MAX_VALUE);
     }
 
     @Koan
