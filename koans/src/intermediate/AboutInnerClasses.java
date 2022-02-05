@@ -38,7 +38,7 @@ public class AboutInnerClasses {
     @Koan
     public void accessingOuterClassMembers() {
         Inner someObject = new Inner();
-        assertEquals(someObject.returnOuter(), __);
+        assertEquals(someObject.returnOuter(), 10);
     }
 
     @Koan
@@ -48,7 +48,7 @@ public class AboutInnerClasses {
                 return 100;
             }
         }
-        assertEquals(new MethodInnerClass().oneHundred(), __);
+        assertEquals(new MethodInnerClass().oneHundred(), 100);
         // Where can you use this class?
     }
 
@@ -71,9 +71,9 @@ public class AboutInnerClasses {
     @Koan
     public void innerClassesInMethodsThatEscape() {
         AnotherInnerClass ic = new AnotherInnerClass();
-        assertEquals(ic.thousand(), __);
+        assertEquals(ic.thousand(), 1000);
         AnotherInnerClass theCrazyIC = ic.crazyReturn();
-        assertEquals(theCrazyIC.thousand(), __);
+        assertEquals(theCrazyIC.thousand(), 2000);
     }
 
     int theAnswer() {
