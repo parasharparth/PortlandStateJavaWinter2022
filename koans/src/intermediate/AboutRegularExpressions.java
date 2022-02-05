@@ -20,8 +20,8 @@ public class AboutRegularExpressions {
         assertEquals(m.find(), true);
         assertEquals(m.start(), 0);
         assertEquals(m.find(), true);
-        assertEquals(m.start(), __);
-        assertEquals(m.find(), __);
+        assertEquals(m.start(), 6);
+        assertEquals(m.find(), false);
     }
 
     @Koan
