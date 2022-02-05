@@ -30,7 +30,7 @@ public class AboutLocale {
     @Koan
     public void getCountryInformation() {
         Locale locBR = new Locale("pt", "BR");
-        assertEquals(locBR.getDisplayCountry(), __);
+        assertEquals(locBR.getDisplayCountry(), "BRAZIL");
         assertEquals(locBR.getDisplayCountry(locBR), __);
 
         Locale locCH = new Locale("it", "CH");
