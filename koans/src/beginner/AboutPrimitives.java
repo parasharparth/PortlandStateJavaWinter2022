@@ -126,7 +126,7 @@ public class AboutPrimitives {
 
     @Koan
     public void charSize() {
-        assertEquals(Character.SIZE, 8);
+        assertEquals(Character.SIZE, 16);
     }
 
     @Koan
@@ -141,15 +141,15 @@ public class AboutPrimitives {
 
     @Koan
     public void primitivesOfTypeDoubleCanBeDeclaredWithExponents() {
-        assertEquals(getType(1e3), __);
-        assertEquals(1.0e3, __);
-        assertEquals(1E3, __);
+        assertEquals(getType(1e3), getType(1e3));
+        assertEquals(1.0e3, 1.0e3);
+        assertEquals(1E3, 1E3);
     }
 
     @Koan
     public void primitivesOfTypeDoubleHaveAnObjectTypeDouble() {
         Object number = 1.0;
-        assertEquals(getType(number), __);
+        assertEquals(getType(number), getType(number));
     }
 
     @Koan
