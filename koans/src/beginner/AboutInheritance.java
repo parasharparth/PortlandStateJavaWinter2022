@@ -71,7 +71,7 @@ public class AboutInheritance {
         Animal bob = new Cow();
         assertEquals(someAnimal.makeSomeNoise().equals(bob.makeSomeNoise()), true);
         // cow is a Cow, but it can also be an animal
-        assertEquals(bob instanceof Animal, false);
+        assertEquals(bob instanceof Animal, true);
         assertEquals(bob instanceof Cow, true);
         // but is it a Puppy?
         assertEquals(bob instanceof Puppy, false);
