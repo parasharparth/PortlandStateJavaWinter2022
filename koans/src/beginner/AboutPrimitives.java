@@ -34,13 +34,13 @@ public class AboutPrimitives {
 
     @Koan
     public void wholeNumbersCanAlsoBeOfTypeLong() {
-        assertEquals(getType(1L), __);
+        assertEquals(getType(1L), "long");
     }
 
     @Koan
     public void primitivesOfTypeLongHaveAnObjectTypeLong() {
         Object number = 1L;
-        assertEquals(getType(number), __);
+        assertEquals(getType(number), "long");
     }
 
     @Koan
