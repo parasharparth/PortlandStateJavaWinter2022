@@ -63,7 +63,7 @@ public class AboutFileIO {
             br = new BufferedReader(fr);
             assertEquals(br.readLine(), "First line"); // first line
             assertEquals(br.readLine(), "Second line"); // second line
-            assertEquals(br.readLine(), "null"); // what now?
+            assertEquals(br.readLine(), null); // what now?
         } finally {
             // anytime you open access to a file, you should close it or you may
             // lock it from other processes (ie frustrate people)
