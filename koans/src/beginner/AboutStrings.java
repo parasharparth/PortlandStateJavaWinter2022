@@ -42,7 +42,7 @@ public class AboutStrings {
     public void stringIsEmpty() {
         assertEquals("".isEmpty(), true);
         assertEquals("one".isEmpty(), false);
-        assertEquals(new String().isEmpty(), __);
+        assertEquals(new String().isEmpty(), true);
         assertEquals(new String("").isEmpty(), __);
         assertEquals(new String("one").isEmpty(), __);
     }
