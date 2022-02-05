@@ -169,7 +169,7 @@ public class AboutConditionals {
             x = "kthxbai";
         }
         assertEquals(x, "kthxbai");
-        assertEquals(trueCount.count, __);
+        assertEquals(trueCount.count, 1);
         assertEquals(falseCount.count, __);
     }
     
