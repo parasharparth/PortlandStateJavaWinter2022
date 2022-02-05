@@ -56,12 +56,12 @@ public class AboutStrings {
 
     @Koan
     public void stringTrim() {
-        assertEquals("".trim(), __);
+        assertEquals("".trim(), "");
         assertEquals("one".trim(), "one");
-        assertEquals(" one more time".trim(), __);
-        assertEquals(" one more time         ".trim(), __);
-        assertEquals(" and again\t".trim(), __);
-        assertEquals("\t\t\twhat about now?\t".trim(), __);
+        assertEquals(" one more time".trim(), "one more time");
+        assertEquals(" one more time         ".trim(), "one more time");
+        assertEquals(" and again\t".trim(), "and again");
+        assertEquals("\t\t\twhat about now?\t".trim(), "what about now?");
     }
 
     @Koan
