@@ -123,10 +123,10 @@ public class AboutStrings {
     public void stringSubstring() {
         String str = "I AM a number ONE!";
         assertEquals(str.substring(0), "I AM a number ONE!");
-        assertEquals(str.substring(1), __);
-        assertEquals(str.substring(5), __);
-        assertEquals(str.substring(14, 17), __);
-        assertEquals(str.substring(7, str.length()), __);
+        assertEquals(str.substring(1), " AM a number ONE!");
+        assertEquals(str.substring(5), "a number ONE!");
+        assertEquals(str.substring(14, 17), " ONE");
+        assertEquals(str.substring(7, str.length()), "number ONE!");
     }
 
     @Koan
