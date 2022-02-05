@@ -42,7 +42,7 @@ public class AboutLoops {
         for (int i = 0; i < 11; i += 2) {
             s += i + " ";
         }
-        assertEquals(s, __);
+        assertEquals(s, "0 2 4 6 8 10 ");
     }
 
     @Koan
