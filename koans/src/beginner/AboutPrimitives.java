@@ -119,7 +119,7 @@ public class AboutPrimitives {
     @Koan
     public void charsCanOnlyBePositive() {
         assertEquals((int) Character.MIN_VALUE, 0);
-        assertEquals((int) Character.MAX_VALUE, 8);
+        assertEquals((int) Character.MAX_VALUE, 65535);
 
         // Why did we cast MIN_VALUE and MAX_VALUE to int? Try it without the cast.
     }
