@@ -31,17 +31,17 @@ public class AboutArithmeticOperators {
     public void minusMinusVariableMinusMinus() {
         int i = 1;
         assertEquals(--i, 0);
-        assertEquals(i, __);
-        assertEquals(i--, __);
-        assertEquals(i, __);
+        assertEquals(i, 0);
+        assertEquals(i--, -1);
+        assertEquals(i, 0);
     }
 
     @Koan
     public void plusPlusVariablePlusPlus() {
         int i = 1;
         assertEquals(++i, __);
-        assertEquals(i, 1);
-        assertEquals(i++, 2);
+        assertEquals(i, 2);
+        assertEquals(i++, 3);
         assertEquals(i, 2);
     }
 
