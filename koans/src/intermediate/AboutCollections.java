@@ -35,9 +35,9 @@ public class AboutCollections {
         queue.add("Dog");
         assertEquals(queue.peek(), "Cat");
         assertEquals(queue.size(), 2);
-        assertEquals(queue.poll(), __);
-        assertEquals(queue.size(), 2);
-        assertEquals(queue.poll(), __);
+        assertEquals(queue.poll(), "Cat");
+        assertEquals(queue.size(), 1);
+        assertEquals(queue.poll(), "Dog");
         assertEquals(queue.isEmpty(), false);
     }
 
