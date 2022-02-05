@@ -102,8 +102,8 @@ public class AboutCollections {
         sorted.add("c");
         sorted.add("z");
         sorted.add("a");
-        assertEquals(sorted.first(), __);
-        assertEquals(sorted.last(), __);
+        assertEquals(sorted.first(), "a");
+        assertEquals(sorted.last(), "z");
         // Look at the different constructors for a TreeSet (or TreeMap)
         // Ponder how you might influence the sort order. Hold that thought
         // until you approach AboutComparison
