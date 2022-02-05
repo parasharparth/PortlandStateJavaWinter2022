@@ -97,6 +97,10 @@ public class AboutFileIO {
         String st;
         while ((st = br.readLine()) != null) {
             sb.append(st).append("\n");
+            if(br.readLine() == null)
+            {
+                break;
+            }
         }
 
         assertEquals(sb.toString(), "1. line\n2. line");
