@@ -150,12 +150,12 @@ public class AboutStrings {
 
     @Koan
     public void readableStringFormattingWithStringFormat() {
-        assertEquals(String.format("%s %s %s", "a", "b", "a"), __);
+        assertEquals(String.format("%s %s %s", "a", "b", "a"), "a b a");
     }
 
     @Koan
     public void extraArgumentsToStringFormatGetIgnored() {
-        assertEquals(String.format("%s %s %s", "a", "b", "c", "d"), __);
+        assertEquals(String.format("%s %s %s", "a", "b", "c", "d"), "a b c");
     }
 
     @Koan
