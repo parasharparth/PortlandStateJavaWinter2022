@@ -12,13 +12,13 @@ public class AboutEquality {
         Object object = new Object();
         Object sameObject = object;
         assertEquals(object == sameObject, true);
-        assertEquals(object == new Object(), __);
+        assertEquals(object == new Object(), false);
     }
 
     @Koan
     public void equalsMethodByDefaultTestsIfTwoObjectsAreTheSame() {
         Object object = new Object();
-        assertEquals(object.equals(object), true);
+        assertEquals(object.equals(object), __);
         assertEquals(object.equals(new Object()), __);
     }
 
