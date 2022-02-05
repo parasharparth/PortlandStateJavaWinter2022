@@ -122,7 +122,7 @@ public class AboutStrings {
     @Koan
     public void stringSubstring() {
         String str = "I AM a number ONE!";
-        assertEquals(str.substring(0), __);
+        assertEquals(str.substring(0), "I AM a number ONE!");
         assertEquals(str.substring(1), __);
         assertEquals(str.substring(5), __);
         assertEquals(str.substring(14, 17), __);
