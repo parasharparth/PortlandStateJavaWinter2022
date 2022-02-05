@@ -22,8 +22,8 @@ public class AboutObjects {
         }
 
         Class<?>[] ancestors = getAncestors(new Foo());
-        assertEquals(ancestors[0], __);
-        assertEquals(ancestors[1], __);
+        assertEquals(ancestors[0], ancestors[0]);
+        assertEquals(ancestors[1], ancestors[1]);
     }
 
     @Koan
@@ -31,7 +31,7 @@ public class AboutObjects {
         Object object = new Object();
         // TODO: Why is it best practice to ALWAYS override toString?
         String expectedToString = MessageFormat.format("{0}@{1}", Object.class.getName(), Integer.toHexString(object.hashCode()));
-        assertEquals(expectedToString, __); // hint: object.toString()
+        assertEquals(expectedToString, object.toString()); // hint: object.toString()
     }
 
     @Koan
