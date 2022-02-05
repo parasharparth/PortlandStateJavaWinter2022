@@ -16,7 +16,7 @@ public class AboutArithmeticOperators {
         assertEquals(2 * 3 + 4, 10);
         assertEquals(2 - 3 + 4, 3);
         assertEquals(2 + 4 / 2, 4);
-        assertEquals((2 + 4) / 2, 4);
+        assertEquals((2 + 4) / 2, 3);
     }
 
     @Koan
