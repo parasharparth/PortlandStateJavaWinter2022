@@ -38,7 +38,7 @@ public class AboutCollections {
         assertEquals(queue.poll(), "Cat");
         assertEquals(queue.size(), 1);
         assertEquals(queue.poll(), "Dog");
-        assertEquals(queue.isEmpty(), false);
+        assertEquals(queue.isEmpty(), true);
     }
 
     @Koan
@@ -47,10 +47,10 @@ public class AboutCollections {
         set.add("Dog");
         set.add("Cat");
         set.add("Dog");
-        assertEquals(set.size(), __);
-        assertEquals(set.contains("Dog"), __);
-        assertEquals(set.contains("Cat"), __);
-        assertEquals(set.contains("Chicken"), __);
+        assertEquals(set.size(), 2);
+        assertEquals(set.contains("Dog"), true);
+        assertEquals(set.contains("Cat"), true);
+        assertEquals(set.contains("Chicken"), false);
     }
 
     @Koan
@@ -59,11 +59,11 @@ public class AboutCollections {
         map.put("first key", "first value");
         map.put("second key", "second value");
         map.put("first key", "other value");
-        assertEquals(map.size(), __);
-        assertEquals(map.containsKey("first key"), __);
-        assertEquals(map.containsKey("second key"), __);
-        assertEquals(map.containsValue("first value"), __);
-        assertEquals(map.get("first key"), __);
+        assertEquals(map.size(), 2);
+        assertEquals(map.containsKey("first key"), true);
+        assertEquals(map.containsKey("second key"), true);
+        assertEquals(map.containsValue("first value"), false);
+        assertEquals(map.get("first key"), "other value");
     }
 
     @Koan
