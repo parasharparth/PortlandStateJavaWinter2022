@@ -56,7 +56,7 @@ public class AboutPrimitives {
 
     @Koan
     public void wholeNumbersCanAlsoBeOfTypeShort() {
-        assertEquals(getType((short) 1), getType((short)1)); // The '(short)' is called an explicit cast - to type 'short'
+        assertEquals(getType((short) 1), short.class); // The '(short)' is called an explicit cast - to type 'short'
     }
 
     @Koan
@@ -78,7 +78,7 @@ public class AboutPrimitives {
 
     @Koan
     public void wholeNumbersCanAlsoBeOfTypeByte() {
-        assertEquals(getType((byte) 1), getType((byte) 1));
+        assertEquals(getType((byte) 1), byte.class);
     }
 
     @Koan
@@ -102,18 +102,18 @@ public class AboutPrimitives {
 
     @Koan
     public void wholeNumbersCanAlsoBeOfTypeChar() {
-        assertEquals(getType((char) 1), getType((char) 1));
+        assertEquals(getType((char) 1), char.class);
     }
 
     @Koan
     public void singleCharactersAreOfTypeChar() {
-        assertEquals(getType('a'), getType('a'));
+        assertEquals(getType('a'), char.class);
     }
 
     @Koan
     public void primitivesOfTypeCharHaveAnObjectTypeCharacter() {
         Object number = (char) 1;
-        assertEquals(getType(number), getType(number));
+        assertEquals(getType(number), Character.class);
     }
 
     @Koan
@@ -131,25 +131,25 @@ public class AboutPrimitives {
 
     @Koan
     public void decimalNumbersAreOfTypeDouble() {
-        assertEquals(getType(1.0), getType(1.0));
+        assertEquals(getType(1.0), double.class);
     }
 
     @Koan
     public void primitivesOfTypeDoubleCanBeDeclaredWithoutTheDecimalPoint() {
-        assertEquals(getType(1d), getType(1d));
+        assertEquals(getType(1d), double.class);
     }
 
     @Koan
     public void primitivesOfTypeDoubleCanBeDeclaredWithExponents() {
-        assertEquals(getType(1e3), getType(1e3));
-        assertEquals(1.0e3, 1.0e3);
-        assertEquals(1E3, 1E3);
+        assertEquals(getType(1e3), double.class);
+        assertEquals(1.0e3, 1000.0);
+        assertEquals(1E3, 1000.0);
     }
 
     @Koan
     public void primitivesOfTypeDoubleHaveAnObjectTypeDouble() {
         Object number = 1.0;
-        assertEquals(getType(number), getType(number));
+        assertEquals(getType(number), Double.class);
     }
 
     @Koan
@@ -165,20 +165,20 @@ public class AboutPrimitives {
 
     @Koan
     public void decimalNumbersCanAlsoBeOfTypeFloat() {
-        assertEquals(getType(1f), getType(1f));
+        assertEquals(getType(1f), float.class);
     }
 
     @Koan
     public void primitivesOfTypeFloatCanBeDeclaredWithExponents() {
-        assertEquals(getType(1e3f), getType(1e3f));
-        assertEquals(1.0e3f, 1.0e3f);
-        assertEquals(1E3f, 1E3f);
+        assertEquals(getType(1e3f), float.class);
+        assertEquals(1.0e3f, 1000.0f);
+        assertEquals(1E3f, 1000.0f);
     }
 
     @Koan
     public void primitivesOfTypeFloatHaveAnObjectTypeFloat() {
         Object number = 1f;
-        assertEquals(getType(number), getType(number));
+        assertEquals(getType(number), Float.class);
     }
 
     @Koan
