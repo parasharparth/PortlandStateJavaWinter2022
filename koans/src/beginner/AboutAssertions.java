@@ -27,8 +27,8 @@ public class AboutAssertions {
 
     @Koan
     public void assertNullObjectReference() {
-        Object someObject = __;
-        assertNull(null);
+        Object someObject = null;
+        assertNull(someObject);
     }
 
     @Koan
