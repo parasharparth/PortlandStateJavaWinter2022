@@ -1,0 +1,20 @@
+
+Airline : Valid Airlines
+Flightnumber : 102
+Source : CVG
+Date of Departure : 03/04/2017
+Time of Departure : 12:36 pm
+Destination : LFT
+Date of Arrival : 03/05/2017
+Time of Arrival : 8:19 pm
+Duration (minutes) : 1903
+
+Airline : Valid Airlines
+Flightnumber : 102
+Source : CVG
+Date of Departure : 03/04/2017
+Time of Departure : 12:36 pm
+Destination : LFT
+Date of Arrival : 03/05/2017
+Time of Arrival : 8:19 pm
+Duration (minutes) : 1903
