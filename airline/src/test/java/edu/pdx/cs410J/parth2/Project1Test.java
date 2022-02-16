@@ -11,10 +11,10 @@ import java.io.File;
 
 class Project1Test extends InvokeMainTestCase {
   /**
-   * Invokes the main method of {@link Project3} with the given arguments.
+   * Invokes the main method of {@link Project4} with the given arguments.
    */
   private MainMethodResult invokeMain(String... args) {
-    return invokeMain(Project3.class, args);
+    return invokeMain(Project4.class, args);
   }
 
   /**
@@ -209,6 +209,35 @@ class Project1Test extends InvokeMainTestCase {
     MainMethodResult result = invokeMain(new String[]{"-pretty", "xyz.txt", "-textFile", "abc.txt", "emirates", "123", "iah", "03/03/2017", "12:00", "am", "iad", "03/03/2017", "4:00", "-README"});
     assertThat(result.getExitCode(), equalTo(1));
     assertThat(result.getTextWrittenToStandardError(), containsString("Please check the arguments"));
+  }
+  @Test
+  public void prettyPrintFromXML(){
+    MainMethodResult result = invokeMain(new String[] {"-xmlFile", "src/test/resources/edu/pdx/cs410J/parth2/valid-airline.xml", "-pretty", "src/test/resources/edu/pdx/cs410J/parth2/pretty.txt", "Valid Airlines", "102", "CVG", "03/04/2017", "12:36", "pm", "LFT", "03/05/2017", "8:19", "pm"});
+    assertThat(result.getTextWrittenToStandardOut(), containsString("Flight written in xml file"));
+  }
+
+  @Test
+  public void xmlHasWrongDate(){
+    MainMethodResult result = invokeMain(new String[] {"-xmlFile", "src/test/resources/edu/pdx/cs410J/parth2/xmlwrongdate.xml", "-pretty", "src/test/resources/edu/pdx/cs410J/parth2/pretty.txt", "Valid Airlines", "102", "CVG", "03/04/2017", "12:36", "pm", "LFT", "03/05/2017", "8:19", "pm"});
+    assertThat(result.getTextWrittenToStandardOut(), containsString("Flight written in xml file"));
+  }
+
+  @Test
+  public void xmlHasWrongFLightNumber(){
+    MainMethodResult result = invokeMain(new String[] {"-xmlFile", "src/test/resources/edu/pdx/cs410J/parth2/xmlwrongflightnumber.xml", "-pretty", "src/test/resources/edu/pdx/cs410J/parth2/pretty.txt", "Valid Airlines", "102", "CVG", "03/04/2017", "12:36", "pm", "LFT", "03/05/2017", "8:19", "pm"});
+    assertThat(result.getTextWrittenToStandardOut(), containsString("Flight written in xml file"));
+  }
+
+  @Test
+  public void xmlHasNonExistentAirport(){
+    MainMethodResult result = invokeMain(new String[] {"-xmlFile", "src/test/resources/edu/pdx/cs410J/parth2/xmlwrongairportcode.xml", "-pretty", "src/test/resources/edu/pdx/cs410J/parth2/pretty.txt", "Valid Airlines", "102", "CVG", "03/04/2017", "12:36", "pm", "LFT", "03/05/2017", "8:19", "pm"});
+    assertThat(result.getTextWrittenToStandardOut(), containsString("Flight written in xml file"));
+  }
+
+  @Test
+  public void xmlFileIsEmpty(){
+    MainMethodResult result = invokeMain(new String[] {"-xmlFile", "src/test/resources/edu/pdx/cs410J/parth2/empty.xml", "-pretty", "src/test/resources/edu/pdx/cs410J/parth2/pretty.txt", "Valid Airlines", "102", "CVG", "03/04/2017", "12:36", "pm", "LFT", "03/05/2017", "8:19", "pm"});
+    assertThat(result.getTextWrittenToStandardOut(), containsString("Flight written in xml file"));
   }
 
 }

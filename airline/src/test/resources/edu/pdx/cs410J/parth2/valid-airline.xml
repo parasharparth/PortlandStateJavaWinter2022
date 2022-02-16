@@ -1,8 +1,5 @@
-<?xml version='1.0' encoding='us-ascii'?>
-
-<!DOCTYPE airline
-          SYSTEM "http://www.cs.pdx.edu/~whitlock/dtds/airline.dtd">
-
+<?xml version="1.0" encoding="us-ascii"?>
+<!DOCTYPE airline SYSTEM "http://www.cs.pdx.edu/~whitlock/dtds/airline.dtd">
 <airline>
   <name>Valid Airlines</name>
   <flight>
@@ -12,7 +9,7 @@
       <date day="25" month="9" year="2020"/>
       <time hour="17" minute="0"/>
     </depart>
-    <dest>CMN</dest> <!-- They're taking me to Marrakesh! -->
+    <dest>CMN</dest>
     <arrive>
       <date day="26" month="9" year="2020"/>
       <time hour="3" minute="56"/>
@@ -31,5 +28,69 @@
       <time hour="9" minute="7"/>
     </arrive>
   </flight>
+  <flight>
+    <number>102</number>
+    <src>CVG</src>
+    <depart>
+      <date day="4" month="3" year="2017"/>
+      <time hour="12" minute="36"/>
+    </depart>
+    <dest>LFT</dest>
+    <arrive>
+      <date day="5" month="3" year="2017"/>
+      <time hour="20" minute="19"/>
+    </arrive>
+  </flight>
+  <flight>
+    <number>102</number>
+    <src>CVG</src>
+    <depart>
+      <date day="4" month="3" year="2017"/>
+      <time hour="12" minute="36"/>
+    </depart>
+    <dest>LFT</dest>
+    <arrive>
+      <date day="5" month="3" year="2017"/>
+      <time hour="20" minute="19"/>
+    </arrive>
+  </flight>
+  <flight>
+    <number>102</number>
+    <src>CVG</src>
+    <depart>
+      <date day="4" month="3" year="2017"/>
+      <time hour="12" minute="36"/>
+    </depart>
+    <dest>LFT</dest>
+    <arrive>
+      <date day="5" month="3" year="2017"/>
+      <time hour="20" minute="19"/>
+    </arrive>
+  </flight>
+  <flight>
+    <number>102</number>
+    <src>CVG</src>
+    <depart>
+      <date day="4" month="3" year="2017"/>
+      <time hour="12" minute="36"/>
+    </depart>
+    <dest>LFT</dest>
+    <arrive>
+      <date day="5" month="3" year="2017"/>
+      <time hour="20" minute="19"/>
+    </arrive>
+  </flight>
+  <flight>
+    <number>102</number>
+    <src>CVG</src>
+    <depart>
+      <date day="4" month="3" year="2017"/>
+      <time hour="12" minute="36"/>
+    </depart>
+    <dest>LFT</dest>
+    <arrive>
+      <date day="5" month="3" year="2017"/>
+      <time hour="20" minute="19"/>
+    </arrive>
+  </flight>
 </airline>
-
