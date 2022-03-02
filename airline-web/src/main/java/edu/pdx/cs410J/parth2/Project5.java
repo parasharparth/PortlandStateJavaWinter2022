@@ -70,7 +70,7 @@ public class Project5 {
             }
         }
 
-        // This is the case when there are 14 arguments
+        // This is the case when there are 15 arguments
         if(args.length == 15){
             if((args[0].equals("-host") && args[2].equals("-port") && args[4].equals("-print"))
                     || (args[0].equals("-port") && args[2].equals("-host") && args[4].equals("-print"))
