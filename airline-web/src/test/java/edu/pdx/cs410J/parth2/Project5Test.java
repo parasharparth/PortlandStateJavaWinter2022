@@ -39,7 +39,7 @@ public class Project5Test extends InvokeMainTestCase {
     public void test4Readme() {
         MainMethodResult result = invokeMain( Project5.class, "-README");
         assertThat(result.getExitCode(), equalTo(0));
-        assertThat(result.getTextWrittenToStandardOut(), containsString("Name: Pratik Kadam"));
+        assertThat(result.getTextWrittenToStandardOut(), containsString("Name: parth parashar"));
     }
 
     @Test(expected = IllegalArgumentException.class)
