@@ -21,7 +21,7 @@ public class Project5 {
     /**
      * This is the main method that parses the command line arguments and performs the required operations
      * @param args This is an array of strings of the command line
-     */
+     **/
     public static void main(String... args) throws Exception {
 
         //This is the case when there are no arguments
@@ -169,6 +169,31 @@ public class Project5 {
                 int portnum = Integer.parseInt(portString);
                 AirlineRestClient client = new AirlineRestClient(hostName, portnum);
                 String prettyAirline = client.getAllFlights(args[5]);
+                System.out.println(prettyAirline);
+                System.exit(0);
+            }
+        }
+
+        //Option only for pretty printing the airline
+        if(args.length == 5)
+        {
+            if((args[0].equals("-host") && args[2].equals("-port"))
+            ||args[0].equals("-port") && args[2].equals("-host"))
+            {
+                String hostName = "";
+                String portString = "";
+                for (int i = 0; i<args.length; i++){
+                    if(args[i].equals("-host")){
+                        hostName = args[i+1];
+                    }
+                    if(args[i].equals("-port")){
+                        portString = args[i+1];
+                    }
+                }
+                checkhostandport(hostName, portString);
+                int portnum = Integer.parseInt(portString);
+                AirlineRestClient client = new AirlineRestClient(hostName, portnum);
+                String prettyAirline = client.getAllFlights(args[4]);
                 System.out.println(prettyAirline);
                 System.exit(0);
             }
