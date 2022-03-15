@@ -1,4 +1,4 @@
-package edu.pdx.cs410j.myairlineapplication;
+package edu.pdx.cs410j.parth2;
 
 import edu.pdx.cs410J.AbstractFlight;
 import edu.pdx.cs410J.AirportNames;
