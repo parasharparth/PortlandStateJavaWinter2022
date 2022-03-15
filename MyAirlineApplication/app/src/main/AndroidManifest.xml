@@ -18,6 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".DeleteActivity"></activity>
+        <activity android:name=".resultsActivity" />
+        <activity android:name=".LaunchSearchActivity" />
+        <activity android:name=".AddFlightActivity" />
+        <activity android:name=".readmeactivity" />
     </application>
 
 </manifest>
